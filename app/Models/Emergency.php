@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Emergency extends Model
 {
     protected $fillable = [
-        'id', 'phone', 'first_name','last_name','adress','user_id',
+        'id', 'date', 'longitude','latitude','user_id',
     ];
     public function emergency_user()
     {

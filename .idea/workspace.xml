@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e193b7a7-c2c4-44df-abd8-454bb1b56a79" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,17 +145,36 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1612123072381</updated>
-      <workItem from="1612123073931" duration="14596000" />
+      <workItem from="1612123073931" duration="15740000" />
     </task>
+    <task id="LOCAL؜٠٠٠٠١" summary="user model">
+      <created>1612208731319</created>
+      <option name="number" value="LOCAL؜٠٠٠٠١" />
+      <option name="presentableId" value="LOCAL؜٠٠٠٠١" />
+      <updated>1612208731319</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="user model" />
+    <option name="LAST_COMMIT_MESSAGE" value="user model" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="219" y="0" key="CommitChangelistDialog2" timestamp="1612208729827">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="219" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612208729827" />
     <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612206476005">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612206476005" />
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1612208758915">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612208758915" />
   </component>
 </project>
