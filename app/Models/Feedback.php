@@ -6,11 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Feedback extends Model
 {
+    protected $table = 'feedbacks';
+    
     protected $fillable = [
         'id', 'emergency_id', 'status','response',
     ];
 
-    public function feedback_emergency()
+    public function emergency()
     {
         return $this->belongsTo(Emergency::class);
     }

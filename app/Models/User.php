@@ -13,23 +13,30 @@ class User extends Authenticatable
 
     protected $fillable = [
         'id','phone', 'password', 'first_name','last_name','adress','gender','date_of_birth',
-        'sms_alert','latitude','longitude','city','country','block','role_id',
+        'sms_alert','latitude','longitude','city','country','block','photo','role_id',
     ];
 
-    public function user_contact()
+    public function contacts()
     {
         return $this->hasMany(Contact::class);
     }
-    public function user_emergency()
+
+    public function emergency()
     {
         return $this->hasMany(Emergency::class);
     }
-    public function user_report()
+
+    public function reports()
     {
-        return $this->belongsToMany(Report::class);
+        return $this->belongsToMany(Report::class,'report_users','user_reporter_id','report_id');
     }
 
-    public function user_role()
+    public function nearest_user()
+    {
+        return $this->belongsToMany(User::class,'nearest_users');
+    }
+
+    public function role()
     {
         return $this->hasOne(Role::class);
     }

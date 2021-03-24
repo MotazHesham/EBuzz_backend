@@ -11,17 +11,18 @@ class CreateUsersTable extends Migration
      *
      * @return void
      */
-   
+
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('phone')->unique();
+            $table->string('phone');
             $table->string('password');
             $table->string('first_name');
             $table->string('last_name');
-            $table->string('adress');
+            $table->string('address');
             $table->string('gender');
+            $table->string('photo')->nullable();
             $table->date('date_of_birth');
             $table->string('sms_alert');
             $table->double('latitude');
@@ -31,6 +32,7 @@ class CreateUsersTable extends Migration
             $table->tinyInteger('block');
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

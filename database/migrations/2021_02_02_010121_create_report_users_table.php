@@ -14,7 +14,6 @@ class CreateReportUsersTable extends Migration
     public function up()
     {
         Schema::create('report_users', function (Blueprint $table) {
-            $table->id();
             $table->string('reason');
             $table->unsignedBigInteger('user_reported_id');
             $table->unsignedBigInteger('user_reporter_id');

@@ -10,7 +10,7 @@ class Notification extends Model
         'id','emergency_id',
     ];
 
-    public function notification_emergency()
+    public function emergency()
     {
         return $this->belongsTo(Emergency::class);
     }

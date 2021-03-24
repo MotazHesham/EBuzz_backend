@@ -10,7 +10,7 @@ class Video extends Model
         'id','video','emergency_id'
     ];
 
-    public function video_emergency()
+    public function emergency()
     {
         return $this->belongsTo(Emergency::class);
     }

@@ -9,22 +9,22 @@ class Emergency extends Model
     protected $fillable = [
         'id', 'date', 'longitude','latitude','user_id',
     ];
-    public function emergency_user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function emergency_feedback()
+    public function feedback()
     {
         return $this->hasOne(Feedback::class);
     }
 
-    public function emergency_video()
+    public function video()
     {
         return $this->hasOne(Video::class);
     }
 
-    public function emergency_notification()
+    public function notification()
     {
         return $this->hasMany(Notification::class);
     }

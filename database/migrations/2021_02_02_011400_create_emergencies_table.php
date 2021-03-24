@@ -15,11 +15,12 @@ class CreateEmergenciesTable extends Migration
     {
         Schema::create('emergencies', function (Blueprint $table) {
             $table->id(); 
-            $table->date('date_of_birth');
+            $table->datetime('date');
             $table->double('latitude');
             $table->double('longitude');
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->timestamps();
         });
     }
 

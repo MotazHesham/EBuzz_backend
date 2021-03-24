@@ -10,9 +10,9 @@ class Report extends Model
         'id','reason',
     ];
 
-    public function report_user()
+    public function users()
     {
-        return $this->belongsTomany(User::class);
+        return $this->belongsToMany(User::class,'report_users','report_id','user_reporter_id');
     }
 
 }

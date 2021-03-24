@@ -10,7 +10,7 @@ class Contact extends Model
         'id','phone','first_name','last_name','user_id'
     ];
 
-    public function contact_user()
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
