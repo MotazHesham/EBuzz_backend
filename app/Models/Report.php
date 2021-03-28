@@ -12,7 +12,7 @@ class Report extends Model
 
     public function users()
     {
-        return $this->belongsToMany(User::class,'report_users','report_id','user_reporter_id');
+        return $this->belongsToMany(User::class,'report_users','report_id','user_reporter_id')->withpivot(['reason','user_reported_id']);
     }
 
 }

@@ -5,10 +5,11 @@ namespace App\Models;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use HasApiTokens, Notifiable;
 
 
     protected $fillable = [
@@ -28,7 +29,7 @@ class User extends Authenticatable
 
     public function reports()
     {
-        return $this->belongsToMany(Report::class,'report_users','user_reporter_id','report_id');
+        return $this->belongsToMany(Report::class,'report_users','user_reporter_id','report_id')->withpivot(['reason','user_reported_id']);
     }
 
     public function nearest_user()
