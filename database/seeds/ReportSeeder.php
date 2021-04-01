@@ -12,12 +12,23 @@ class ReportSeeder extends Seeder
      */
     
     public function run()
-    {
-        $faker = Faker\Factory::create();
-        for ($i = 1 ; $i <= 20 ; $i++) {
-            $report = new Report();
-            $report->reason =$faker->realText(10,2);
-            $report->save();
-        }
+    { 
+        $i = 1;
+
+        $reports = [
+            [
+                'id'    => $i++,
+                'reason' => 'Noisy',
+            ],
+            [
+                'id'    => $i++,
+                'reason' => 'Fakings',
+            ],
+            [
+                'id'    => $i++,
+                'reason' => 'others',
+            ],
+        ];
+        Report::insert($reports); 
     }
 }

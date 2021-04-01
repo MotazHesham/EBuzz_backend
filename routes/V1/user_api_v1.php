@@ -13,16 +13,27 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
     Route::group(['middleware' => ['auth:sanctum']],function () {
 
         // contacts
-        Route ::group(['prefix' =>'contact'],function(){
+        Route::group(['prefix' =>'contact'],function(){
             Route::post('add','ContactsApiController@store') ;       
             Route::get('delete/{contact_id}','ContactsApiController@delete') ;
         });
 
         // reports
-        Route ::group(['prefix' =>'report'],function(){
+        Route::group(['prefix' =>'report'],function(){
+            Route::get('index','ReportsApiController@index') ;        
             Route::post('add','ReportsApiController@store') ;        
         });
-        
+
+        // location
+        Route::group(['prefix' =>'location'],function(){
+            Route::post('update','UsersApiController@update_location') ;        
+        });
+
+        //emergencies
+        Route::group(['prefix' =>'emergencies'],function(){
+            Route::get('history','EmergenciesApiController@history') ;        
+        });
+
     });
 });
 

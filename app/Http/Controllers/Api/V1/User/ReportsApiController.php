@@ -8,11 +8,19 @@ use App\Models\User;
 use App\Traits\api_return;
 use Illuminate\Http\Request;
 use Validator;
+use App\Http\Resources\V1\User\ReportResource;
 
 class ReportsApiController extends Controller
 {
 
     use api_return;
+
+    public function index(Request $request){
+      $reports = Report::all(); 
+      return $this->returnData(ReportResource::collection($reports));
+    }
+
+    //---------------------------------------------------------------
 
     public function store(Request $request)
     { 
