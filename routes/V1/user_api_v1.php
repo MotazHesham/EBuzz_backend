@@ -11,15 +11,17 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
     Route::post('login','UserAuthApiController@login');
     
     Route::group(['middleware' => ['auth:sanctum']],function () {
-        //routes for adding contacts and delete it
-    Route ::group(['prefix' =>'contact'],function(){
-    Route::post('add','ContactsApiController@addContact') ;       
-    Route::get('delete/{contact_id}','ContactsApiController@deleteContact') ;
-   });
-   Route ::group(['prefix' =>'report'],function(){
-    Route::post('add','ReportsApiController@addReport') ;       
- 
-   });
+
+        // contacts
+        Route ::group(['prefix' =>'contact'],function(){
+            Route::post('add','ContactsApiController@store') ;       
+            Route::get('delete/{contact_id}','ContactsApiController@delete') ;
+        });
+
+        // reports
+        Route ::group(['prefix' =>'report'],function(){
+            Route::post('add','ReportsApiController@store') ;        
+        });
         
     });
 });
