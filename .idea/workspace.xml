@@ -2,15 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e193b7a7-c2c4-44df-abd8-454bb1b56a79" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResources2.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Contact.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Contact.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/User/UsersApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/User/UsersApiController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/EmergencyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/EmergencyResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/NotificationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/NotificationResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResource.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/V1/user_api_v1.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/V1/user_api_v1.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -118,6 +128,15 @@
       <path value="$PROJECT_DIR$/vendor/psr/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/psr/container" />
       <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/lcobucci/jwt" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-diactoros" />
+      <path value="$PROJECT_DIR$/vendor/laminas/laminas-zendframework-bridge" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client" />
+      <path value="$PROJECT_DIR$/vendor/nexmo/client-core" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-factory" />
+      <path value="$PROJECT_DIR$/vendor/vonage/nexmo-bridge" />
+      <path value="$PROJECT_DIR$/vendor/psr/http-client" />
+      <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nqgXJIVylG46QeFKRmCyMawVl5" />
@@ -128,7 +147,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../cc/api_practice-main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -136,6 +155,12 @@
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\EBuzz_backend\app\Models" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
+      <TestRunner scope="XML" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -146,6 +171,7 @@
       <option name="presentableId" value="Default" />
       <updated>1612123072381</updated>
       <workItem from="1612123073931" duration="15740000" />
+      <workItem from="1617217287126" duration="17633000" />
     </task>
     <task id="LOCAL؜٠٠٠٠١" summary="user model">
       <created>1612208731319</created>
@@ -164,14 +190,22 @@
     <option name="LAST_COMMIT_MESSAGE" value="user model" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="334" y="166" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1617236488498">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="334" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1617236488498" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617237183909">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1617237183909" />
     <state x="219" y="0" key="CommitChangelistDialog2" timestamp="1612208729827">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="219" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612208729827" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1612206476005">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1617217338730">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1612206476005" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1617217338730" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1612208758915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

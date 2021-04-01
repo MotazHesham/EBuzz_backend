@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Route; 
+use Illuminate\Support\Facades\Route;
 
 
 
@@ -9,7 +9,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
     Route::post('register','UserAuthApiController@register');
     Route::post('login','UserAuthApiController@login');
-    
+
     Route::group(['middleware' => ['auth:sanctum']],function () {
 
         // contacts
@@ -33,7 +33,12 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         Route::group(['prefix' =>'emergencies'],function(){
             Route::get('history','EmergenciesApiController@history') ;        
         });
+        Route::post('profile','UsersApiController@user_profile');
+        Route::post('profile/update','UsersApiController@update');
+        Route::get('notifications','UsersApiController@notification');
 
     });
 });
+
+
 

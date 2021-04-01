@@ -14,6 +14,12 @@ class NotificationResource extends JsonResource
      */
     public function toArray($request)
     {
-        return parent::toArray($request);
+
+        return [
+            'user' => $this->emergency->user->first_name . ' ' . $this->emergency->user->last_name,
+            'emergency' => new EmergencyResource($this->emergency),
+
+        ];
+
     }
 }

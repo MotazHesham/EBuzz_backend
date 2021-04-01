@@ -13,12 +13,12 @@ class EmergencyResource extends JsonResource
      * @return array
      */
     public function toArray($request)
-    {
+    { 
         return [
-            'id' => $this->id,
+            'id'=>$this->id,
             'date' => $this->date,
+            'latitude' => $this->latitude,
             'longitude' => $this->longitude,
-            'latitude' => $this->latitude
         ];
     }
 }
