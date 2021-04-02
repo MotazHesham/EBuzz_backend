@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Http\Controllers\Api\V1\User;
+use App\Models\User;
 use Validator;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -59,9 +60,9 @@ class ContactsApiController extends Controller
 
     public function view(){
 
-        $contact=Contact::find(Auth::id());
+        $contact=contact::where('user_id',Auth::id())->get();
 
-        $new = new ContactResource($contact);
+        $new = ContactResource::collection($contact);
 
         return $this->returnData($new , "success");
 
