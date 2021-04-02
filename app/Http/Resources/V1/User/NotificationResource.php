@@ -16,6 +16,7 @@ class NotificationResource extends JsonResource
     {
 
         return [
+            'photo'=>$this->emergency->user->photo ,
             'user' => $this->emergency->user->first_name . ' ' . $this->emergency->user->last_name,
             'emergency' => new EmergencyResource($this->emergency),
 
