@@ -36,7 +36,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
         //notifications
         Route::group(['prefix' =>'notifications'],function(){
-            Route::get('/','NotificationsAPiController@usernotification');        
+            Route::get('/','NotificationsAPiController@user_notifications');        
         }); 
 
         //user profile 
