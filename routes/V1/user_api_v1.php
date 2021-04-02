@@ -33,9 +33,17 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         Route::group(['prefix' =>'emergencies'],function(){
             Route::get('history','EmergenciesApiController@history') ;        
         });
-        Route::post('profile','UsersApiController@user_profile');
-        Route::post('profile/update','UsersApiController@update');
-        Route::get('notifications','UsersApiController@notification');
+
+        //notifications
+        Route::group(['prefix' =>'notifications'],function(){
+            Route::get('/','NotificationsAPiController@usernotification');        
+        }); 
+
+        //user profile 
+        Route::group(['prefix' =>'profile'],function(){
+            Route::get('/','UsersApiController@profile');
+            Route::post('update','UsersApiController@update');
+        });
 
     });
 });

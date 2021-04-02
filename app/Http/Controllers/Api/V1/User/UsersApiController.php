@@ -3,19 +3,19 @@
 namespace App\Http\Controllers\Api\V1\User;
 
 use App\Http\Controllers\Controller;
-use App\Http\Resources\V1\User\NotificationResource;
 use App\Models\Emergency;
-use App\Models\Notification;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Resources\V1\User\UserResource;
 use App\Traits\api_return;
 use Validator;   
+use Illuminate\Support\Facades\Storage;
 
 class UsersApiController extends Controller
 {
     use api_return;
+
     public function update_location(Request $request){
 
         $rules = [
@@ -33,51 +33,55 @@ class UsersApiController extends Controller
 
         return $this->returnSuccessMessage('Location Updated');
     }
-    public  function  user_profile()
+
+    public function profile()
     {
 
-        $user = User::get();
+        $user = User::find(Auth::id());
 
-        $new = UserResource::collection($user);
+        $new = new UserResource($user);
 
-        return $this->returnData($new , "success");
-
+        return $this->returnData($new , "success"); 
 
     }  
-public function update(Request $request){
 
-    $rules = [
-        'phone'=>'required|max:255',
-       'first_name' => 'required|max:30',
-        'last_name' => 'required|max:30',
-        'address' => 'required|max:255',
-        'gender' => 'required',
-        'date_of_birth' => 'required|max:255',
-        'sms_alert' => 'required|max:255',
+    public function update(Request $request){
+
+        $rules = [ 
+            'first_name' => 'required|max:30',
+            'last_name' => 'required|max:30',
+            'address' => 'required|max:255',
+            'gender' => 'required',
+            'date_of_birth' => 'required|max:255', 
         ];
+
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return $this->returnError('401', $validator->errors());
         }
 
-$user=User::find($request->id)->update($request -> all());
+        $user=User::find(Auth::id());
+
+        if (request()->hasFile('photo') && request('photo') != '' && request('photo') != $user->photo){
+            $validator = Validator::make($request->all(), [
+                'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+            ]);
+            if ($validator->fails()) {
+                return $this->returnError('401', $validator->errors());
+            }
+            $user->photo = Storage::disk('public')->put('uploads/user', $request->photo);
+            $user->save();
+        } 
 
         if(!$user)
-            return $this->returnError('404', "error");
+            return $this->returnError('404', "User Not Found"); 
+
+        $user->update($request->except('photo'));
 
 
-        return $this->returnSuccessMessage(__('updated Successfully'));
-
+        return $this->returnSuccessMessage(__('Profile Updated Successfully')); 
     }
 
-public function notification(){
-
-    $notification = Notification::with('emergency.user')->orderBy('created_at','desc')->paginate(5);
-    $new = NotificationResource::collection($notification);
-
-   return $this->returnPaginationData($new,$notification,"success");
-
-
-}
+    
 }

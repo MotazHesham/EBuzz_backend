@@ -3,6 +3,7 @@
 namespace App\Http\Resources\V1\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
+use Illuminate\Support\Facades\Storage;
 
 class UserResource extends JsonResource
 {
@@ -22,7 +23,7 @@ class UserResource extends JsonResource
             'gender' => $this->gender,
             'date_of_birth' => $this->date_of_birth,
             'sms_alert' => $this->sms_alert,
-
+            'photo' => asset('storage/'.$this->photo) // maybe when uploading in host will be different
         ];
 
 
