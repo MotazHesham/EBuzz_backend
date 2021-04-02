@@ -6,25 +6,27 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Traits\api_return;
 use App\Models\Contact;
+use App\Http\Resources\V1\User\ContactResource;
+use Auth;
 
 class ContactsApiController extends Controller
 {
     // use the trait for api formating
-    use api_return; 
+    use api_return;
 
-    public function store(Request $request){ 
+    public function store(Request $request){
         $rules = [
             'contacts' => 'required',
-            'contacts.*.phone' => 'required|max:20', 
-            'contacts.*.first_name' => 'required|max:50', 
-            'contacts.*.last_name' => 'required|max:50', 
+            'contacts.*.phone' => 'required|max:20',
+            'contacts.*.first_name' => 'required|max:50',
+            'contacts.*.last_name' => 'required|max:50',
         ];
 
         $validator = Validator::make($request->all(), $rules);
 
         if ($validator->fails()) {
             return $this->returnError('401', $validator->errors());
-        } 
+        }
 
         foreach ($request['contacts'] as $row){
             $contact = new Contact();
@@ -32,10 +34,10 @@ class ContactsApiController extends Controller
             $contact->first_name = $row['first_name'];
             $contact->last_name = $row['last_name'];
             $contact->user_id = auth()->user()->id;
-            $contact->save(); 
+            $contact->save();
         }
 
-        return $this->returnSuccessMessage('Added Successfully'); 
+        return $this->returnSuccessMessage('Added Successfully');
     }
 
 
@@ -44,12 +46,25 @@ class ContactsApiController extends Controller
 
         $contact=Contact::find($id);
 
-        if(!$contact){ 
+        if(!$contact){
             return $this->returnError('404',('this contact not found'));
-        }else{ 
-            $contact->delete(); 
-            return $this->returnSuccessMessage('this contact deleted Successfully'); 
-        }   
+        }else{
+            $contact->delete();
+            return $this->returnSuccessMessage('this contact deleted Successfully');
+        }
+
+    }
+
+    //------------------------- view contact --------------------------
+
+    public function view(){
+
+        $contact=Contact::find(Auth::id());
+
+        $new = new ContactResource($contact);
+
+        return $this->returnData($new , "success");
+
 
     }
 }

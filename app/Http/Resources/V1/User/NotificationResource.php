@@ -16,7 +16,7 @@ class NotificationResource extends JsonResource
     {
 
         return [
-            'photo'=>$this->emergency->user->photo ,
+            'photo' => asset('storage/'.$this->photo), // maybe when uploading in host will be different
             'user' => $this->emergency->user->first_name . ' ' . $this->emergency->user->last_name,
             'emergency' => new EmergencyResource($this->emergency),
 

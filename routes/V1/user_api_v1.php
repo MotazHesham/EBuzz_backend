@@ -14,32 +14,35 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
         // contacts
         Route::group(['prefix' =>'contact'],function(){
-            Route::post('add','ContactsApiController@store') ;       
+            Route::post('add','ContactsApiController@store') ;
             Route::get('delete/{contact_id}','ContactsApiController@delete') ;
+            Route::get('view','ContactsApiController@view') ;
+
+
         });
 
         // reports
         Route::group(['prefix' =>'report'],function(){
-            Route::get('index','ReportsApiController@index') ;        
-            Route::post('add','ReportsApiController@store') ;        
+            Route::get('index','ReportsApiController@index') ;
+            Route::post('add','ReportsApiController@store') ;
         });
 
         // location
         Route::group(['prefix' =>'location'],function(){
-            Route::post('update','UsersApiController@update_location') ;        
+            Route::post('update','UsersApiController@update_location') ;
         });
 
         //emergencies
         Route::group(['prefix' =>'emergencies'],function(){
-            Route::get('history','EmergenciesApiController@history') ;        
+            Route::get('history','EmergenciesApiController@history') ;
         });
 
         //notifications
         Route::group(['prefix' =>'notifications'],function(){
-            Route::get('/','NotificationsAPiController@user_notifications');        
-        }); 
+            Route::get('/','NotificationsAPiController@user_notifications');
+        });
 
-        //user profile 
+        //user profile
         Route::group(['prefix' =>'profile'],function(){
             Route::get('/','UsersApiController@profile');
             Route::post('update','UsersApiController@update');
