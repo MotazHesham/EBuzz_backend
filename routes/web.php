@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/normal', 'Admin\ContactController@normal');
+Route::get('/ajax', 'Admin\ContactController@ajax')->name('ajax');
+
+Route::resource('contacts', 'ContactController');
