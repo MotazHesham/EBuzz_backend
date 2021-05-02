@@ -15,7 +15,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">phone</label>
 
                             <div class="col-md-6">
-                                <input  type="mobile" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                <input  type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
 
                                 @error('phone')
                                     <span class="invalid-feedback" role="alert">

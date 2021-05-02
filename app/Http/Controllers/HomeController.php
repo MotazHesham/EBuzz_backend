@@ -24,14 +24,11 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
-    {
-
-        $user = User::find(auth()->user()->id);
-        $user->login_status = 1;
-        $user->save();
-
+    { 
         if (auth()->user() && auth()->user()->role_id == 1) {
-            return redirect('admin');
+            return redirect()->route('admin');
+        }else{
+            abort(403);
         }
     }
 

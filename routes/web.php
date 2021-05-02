@@ -25,9 +25,6 @@ Route::resource('contacts', 'ContactController');
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/logout', function () {
-    $user = User::find(auth()->user()->id);
-    $user ->login_status = 0;
-    $user->save();
     Auth::logout();
     return redirect("/");
 });
