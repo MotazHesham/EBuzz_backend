@@ -2,18 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e193b7a7-c2c4-44df-abd8-454bb1b56a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/phpunit.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResources2.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminAuthController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/User/UsersApiController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/V1/User/UsersApiController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/EmergencyResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/EmergencyResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/NotificationResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/NotificationResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResource.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Resources/V1/User/UserResource.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/V1/user_api_v1.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/V1/user_api_v1.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,7 +139,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Laravel-Jetstream-MultiAuth-Roles-main/Laravel-Jetstream-MultiAuth-Roles-main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -172,6 +164,15 @@
       <updated>1612123072381</updated>
       <workItem from="1612123073931" duration="15740000" />
       <workItem from="1617217287126" duration="17633000" />
+      <workItem from="1617567747157" duration="1445000" />
+      <workItem from="1618515602530" duration="2649000" />
+      <workItem from="1619576185635" duration="1400000" />
+      <workItem from="1619642227606" duration="721000" />
+      <workItem from="1619656144156" duration="1246000" />
+      <workItem from="1619690599113" duration="214000" />
+      <workItem from="1619754367059" duration="279000" />
+      <workItem from="1619767700848" duration="217000" />
+      <workItem from="1619812078627" duration="4100000" />
     </task>
     <task id="LOCAL؜٠٠٠٠١" summary="user model">
       <created>1612208731319</created>
@@ -194,18 +195,18 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="334" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1617236488498" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617237183909">
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617396528746">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1617237183909" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1617396528746" />
     <state x="219" y="0" key="CommitChangelistDialog2" timestamp="1612208729827">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="219" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612208729827" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1617217338730">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1619813538110">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1617217338730" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619813538110" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1612208758915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
