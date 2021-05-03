@@ -2,9 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e193b7a7-c2c4-44df-abd8-454bb1b56a79" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AdminAuthController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EBuzz_backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/admin/adminView.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/admin/adminView.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/normal.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/normal.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,6 +133,12 @@
       <path value="$PROJECT_DIR$/vendor/vonage/nexmo-bridge" />
       <path value="$PROJECT_DIR$/vendor/psr/http-client" />
       <path value="$PROJECT_DIR$/vendor/laravel/sanctum" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
+      <path value="$PROJECT_DIR$/vendor/yajra/laravel-datatables-oracle" />
+      <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
+      <path value="$PROJECT_DIR$/vendor/scrivo/highlight.php" />
     </include_path>
   </component>
   <component name="ProjectId" id="1nqgXJIVylG46QeFKRmCyMawVl5" />
@@ -139,7 +149,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Laravel-Jetstream-MultiAuth-Roles-main/Laravel-Jetstream-MultiAuth-Roles-main" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Laravel-Jetstream-MultiAuth-Roles-main" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -172,7 +182,8 @@
       <workItem from="1619690599113" duration="214000" />
       <workItem from="1619754367059" duration="279000" />
       <workItem from="1619767700848" duration="217000" />
-      <workItem from="1619812078627" duration="4100000" />
+      <workItem from="1619812078627" duration="37632000" />
+      <workItem from="1619985439907" duration="14094000" />
     </task>
     <task id="LOCAL؜٠٠٠٠١" summary="user model">
       <created>1612208731319</created>
@@ -195,21 +206,29 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="334" y="166" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1366.728@0.0.1366.728" timestamp="1617236488498" />
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1617396528746">
+    <state x="379" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1619906954070">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1617396528746" />
+    <state x="379" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1366.728@0.0.1366.728" timestamp="1619906954070" />
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1620008287112">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="413" y="119" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1366.728@0.0.1366.728" timestamp="1620008287112" />
     <state x="219" y="0" key="CommitChangelistDialog2" timestamp="1612208729827">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="219" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1612208729827" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1619813538110">
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1619911478577">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619813538110" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1619911478577" />
     <state x="275" y="97" key="Vcs.Push.Dialog.v2" timestamp="1612208758915">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="275" y="97" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1612208758915" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1620007768510">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1620007768510" />
   </component>
 </project>

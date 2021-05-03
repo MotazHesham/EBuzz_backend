@@ -17,6 +17,11 @@ use App\Models\User;
 Route::get('/normal', 'Admin\ContactController@normal');
 Route::get('/ajax', 'Admin\ContactController@ajax')->name('ajax');
 
+
+
+Route::get('/showuser', 'Admin\UserController@user')->name('showuser');
+Route::get('/showrole', 'Admin\RoleController@role')->name('showrole');
+
 Route::resource('contacts', 'ContactController');
 
 
