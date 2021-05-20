@@ -9,13 +9,21 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
     <link href="https://cdn.datatables.net/buttons/1.2.4/css/buttons.dataTables.min.css" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />  
+    <link href="https://cdn.datatables.net/select/1.3.0/css/select.dataTables.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="{{asset('/css/admin/style.css')}}">
+  </head>
     @yield('styles')
 </head>
 
 <body>
 
-    @yield('content') 
+    @yield('content')
+
+    @include('layouts.sidebar')
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
@@ -27,6 +35,8 @@
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.print.min.js"></script>
     <script src="https://cdn.datatables.net/buttons/1.2.4/js/buttons.colVis.min.js"></script>
     <script src="https://cdn.datatables.net/select/1.3.0/js/dataTables.select.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <script src="{{asset('js/side.js')}}"></script>
     <script>
 
         $(function() {
@@ -94,10 +104,10 @@
                 orderCellsTop: true,
                 order: [[ 0, 'desc' ]],
                 pageLength: 10,
-            }); 
+            });
         });
-        
-    </script> 
+
+    </script>
     @yield('scripts')
 </body>
 

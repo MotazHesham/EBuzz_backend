@@ -21,6 +21,7 @@ class CreateReportUsersTable extends Migration
             $table->foreign('user_reported_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('user_reporter_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('report_id')->references('id')->on('reports')->onDelete('cascade');
+
         });
     }
 

@@ -29,7 +29,7 @@ class User extends Authenticatable
 
     public function reports()
     {
-        return $this->belongsToMany(Report::class,'report_users','user_reporter_id','report_id')->withpivot(['reason','user_reported_id']);
+        return $this->belongsToMany(Report::class,'report_users','user_reported_id','report_id')->withpivot(['user_reporter_id','note']);
     }
 
     public function nearest_user()

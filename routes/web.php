@@ -19,12 +19,8 @@ Route::get('/ajax', 'Admin\ContactController@ajax')->name('ajax');
 
 
 
-Route::get('/showuser', 'Admin\UserController@user')->name('showuser');
-Route::get('/showrole', 'Admin\RoleController@role')->name('showrole');
 
 Route::resource('contacts', 'ContactController');
-
-
 
 
 Route::get('/', 'HomeController@index')->name('home');
@@ -37,6 +33,14 @@ Route::get('/logout', function () {
 Route::group(['middleware' => 'admin'],function() {
 
     Route::get('admin', 'HomeController@adminView')->name('admin');
+    Route::get('/showEmergency','Admin\EmergenciesController@getEmergency')->name('showEmergency');
+
+   Route::get('/showuser', 'Admin\UserController@user')->name('showuser');
+   Route::get('/showrole', 'Admin\RoleController@role')->name('showrole');
+   Route::get('/ShowReports','Admin\ReportsController@getReports')->name('get.reports');
+
+
+
 });
 
 
