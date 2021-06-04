@@ -16,7 +16,7 @@
         "laravel/framework": "^7.0",
         "laravel/sanctum": "^2.9",
         "laravel/tinker": "^2.0",
-        "laravel/ui": "2.4",
+        "laravel/ui": "^2.4",
         "nexmo/client": "^2.4",
         "yajra/laravel-datatables-oracle": "~9.0"
     },
