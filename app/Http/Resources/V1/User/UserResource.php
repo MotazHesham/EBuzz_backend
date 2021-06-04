@@ -21,7 +21,7 @@ class UserResource extends JsonResource
             'last_name' => $this->last_name,
             'address' => $this->address,
             'gender' => $this->gender,
-            'date_of_birth' => $this->date_of_birth,
+            'age' => $this->age,
             'sms_alert' => $this->sms_alert,
             'photo' => $this->photo ? asset('storage/'.$this->photo) : asset('user.png') // maybe when uploading in host will be different
         ];

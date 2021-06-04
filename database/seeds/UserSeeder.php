@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
             $user->last_name= $faker->lastName;
             $user->phone = $faker->phoneNumber;
             $user->address= $faker->address;
-            $user->date_of_birth= $faker->date('1980-2-25', $max = 'now');
+            $user->age= rand(10,30);
             $user->gender= $GENDER[rand(0,1)];
             $user->sms_alert = $faker->realText(10,2);
             $user->password= bcrypt('123456');
