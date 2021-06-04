@@ -24,6 +24,8 @@
                         <th> city </th>
                         <th> country </th>
                         <th>role_id</th>
+                        <th># reports</th>
+                        <th>Details Of reports</th>
 
 
                     </tr>
@@ -66,6 +68,8 @@
                         { data: 'city', name: 'city' },
                         { data: 'country', name: 'country' },
                         { data: 'role_id', name: 'role_id' },
+                        { data: 'number_of_reports', name: 'number_of_reports' },
+                        { data: 'action', name: 'action'},
 
 
                     ],
@@ -79,4 +83,19 @@
 
 
     </script>
+
+
+<script>
+    function getReports(id){
+
+
+
+  let url = "{{ route('get.reports', 'id=x') }}";
+      url = url.replace('x', id);
+      document.location.href=url;
+
+    }
+
+
+</script>
 @endsection
