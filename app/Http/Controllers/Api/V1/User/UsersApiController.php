@@ -100,10 +100,10 @@ class UsersApiController extends Controller
         if(!$user)
             return $this->returnError('404', "User Not Found"); 
 
-        $user->update();
+        $user->update($request->all());
 
 
-        return $this->returnSuccessMessage(__('Profile Updated Successfully')); 
+        return $this->returnSuccessMessage(__('Sms ALert Updated Successfully')); 
     }
 
 
