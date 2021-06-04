@@ -47,6 +47,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         Route::group(['prefix' =>'profile'],function(){
             Route::get('/','UsersApiController@profile');
             Route::post('update','UsersApiController@update');
+            Route::post('update_sms_alert','UsersApiController@update_sms_alert');
         });
 
     });
