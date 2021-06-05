@@ -69,7 +69,7 @@ class ContactsApiController extends Controller
 
 
     }
-    public function sms(){
+    public function sms (Request $request){
 
       $contacts=contact::where('user_id',Auth::id())->get();
 
@@ -84,9 +84,9 @@ class ContactsApiController extends Controller
         }*/
 
 
-        Nexmo::message()->send([
-            'to' =>  '01156865833',
-            'from' => auth()->user()->phone ,
+            Nexmo::message()->send([
+                'to' =>  $request->mobile,
+            'from' => '16105552344',
             'text' => 'help me!!!'
         ]);
 
