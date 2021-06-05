@@ -52,7 +52,7 @@ class UsersApiController extends Controller
             'last_name' => 'required|max:30',
             'address' => 'required|max:255',
             'gender' => 'required',
-            'age' => 'required|integer|size:100', 
+            'age' => 'required|integer', 
         ];
 
         $validator = Validator::make($request->all(), $rules);
