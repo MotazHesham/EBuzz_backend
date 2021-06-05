@@ -19,6 +19,11 @@ class EmergencyResource extends JsonResource
             'date' => $this->date,
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
+            'country' => $this->country,
+            'country_code' => $this->country_code,
+            'state' => $this->state,
+            'city' => $this->city,
+            'road' => $this->road,
         ];
     }
 }
