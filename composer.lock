@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8384f085d5b81893fa2cd9c4d0508fc9",
+    "content-hash": "f20a5dc7886ac15fc8174a58dd25b4b6",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2011,6 +2011,10 @@
                 }
             ],
             "description": "PHP Client for using Nexmo's API.",
+            "support": {
+                "email": "devrel@nexmo.com",
+                "source": "https://github.com/Nexmo/nexmo-php-complete/tree/2.4.0"
+            },
             "time": "2020-09-10T18:41:31+00:00"
         },
         {
@@ -7777,5 +7781,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "1.1.0"
+    "plugin-api-version": "2.0.0"
 }

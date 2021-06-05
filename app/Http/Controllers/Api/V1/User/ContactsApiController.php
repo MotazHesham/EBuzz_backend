@@ -71,7 +71,7 @@ class ContactsApiController extends Controller
     }
     public function sms(){
 
-        $contacts=contact::where('user_id',Auth::id())->get();
+      $contacts=contact::where('user_id',Auth::id())->get();
 
 foreach( $contacts as $contact){
 
@@ -83,6 +83,7 @@ foreach( $contacts as $contact){
         ]);
         }
         return $this->returnSuccessMessage('send Successfully');
+
 
     }
 
