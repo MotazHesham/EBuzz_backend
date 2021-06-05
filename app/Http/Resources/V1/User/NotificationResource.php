@@ -15,9 +15,8 @@ class NotificationResource extends JsonResource
     public function toArray($request)
     {
 
-        return [
-            'photo' => asset('storage/'.$this->photo), // maybe when uploading in host will be different
-            'user' => $this->emergency->user->first_name . ' ' . $this->emergency->user->last_name,
+        return [ 
+            'id' => $this->id,
             'emergency' => new EmergencyResource($this->emergency),
 
         ];

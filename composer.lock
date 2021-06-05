@@ -163,10 +163,6 @@
                 }
             ],
             "description": "Composer plugin that provides efficient querying for installed package versions (no runtime IO)",
-            "support": {
-                "issues": "https://github.com/composer/package-versions-deprecated/issues",
-                "source": "https://github.com/composer/package-versions-deprecated/tree/1.11.99.2"
-            },
             "funding": [
                 {
                     "url": "https://packagist.com",
@@ -960,14 +956,6 @@
                 "psr-17",
                 "psr-7"
             ],
-            "support": {
-                "chat": "https://laminas.dev/chat",
-                "docs": "https://docs.laminas.dev/laminas-diactoros/",
-                "forum": "https://discourse.laminas.dev",
-                "issues": "https://github.com/laminas/laminas-diactoros/issues",
-                "rss": "https://github.com/laminas/laminas-diactoros/releases.atom",
-                "source": "https://github.com/laminas/laminas-diactoros"
-            },
             "funding": [
                 {
                     "url": "https://funding.communitybridge.org/projects/laminas-project",
@@ -1024,12 +1012,6 @@
                 "laminas",
                 "zf"
             ],
-            "support": {
-                "forum": "https://discourse.laminas.dev/",
-                "issues": "https://github.com/laminas/laminas-zendframework-bridge/issues",
-                "rss": "https://github.com/laminas/laminas-zendframework-bridge/releases.atom",
-                "source": "https://github.com/laminas/laminas-zendframework-bridge"
-            },
             "funding": [
                 {
                     "url": "https://funding.communitybridge.org/projects/laminas-project",
@@ -1416,10 +1398,6 @@
                 }
             ],
             "description": "Yet another clock abstraction",
-            "support": {
-                "issues": "https://github.com/lcobucci/clock/issues",
-                "source": "https://github.com/lcobucci/clock/tree/2.0.x"
-            },
             "funding": [
                 {
                     "url": "https://github.com/lcobucci",
@@ -1492,10 +1470,6 @@
                 "JWS",
                 "jwt"
             ],
-            "support": {
-                "issues": "https://github.com/lcobucci/jwt/issues",
-                "source": "https://github.com/lcobucci/jwt/tree/4.0.3"
-            },
             "funding": [
                 {
                     "url": "https://github.com/lcobucci",
@@ -1991,11 +1965,6 @@
                 }
             ],
             "description": "Laravel Package for Nexmo's PHP Client",
-            "support": {
-                "email": "devrel@nexmo.com",
-                "issues": "https://github.com/Nexmo/nexmo-laravel/issues",
-                "source": "https://github.com/Nexmo/nexmo-laravel/tree/2.4.1"
-            },
             "time": "2020-12-04T13:11:05+00:00"
         },
         {
@@ -2218,10 +2187,6 @@
                 "container-interop",
                 "psr"
             ],
-            "support": {
-                "issues": "https://github.com/php-fig/container/issues",
-                "source": "https://github.com/php-fig/container/tree/1.1.1"
-            },
             "time": "2021-03-05T17:36:06+00:00"
         },
         {
@@ -2369,9 +2334,6 @@
                 "request",
                 "response"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/http-factory/tree/master"
-            },
             "time": "2019-04-30T12:38:16+00:00"
         },
         {
@@ -2422,9 +2384,6 @@
                 "request",
                 "response"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/http-message/tree/master"
-            },
             "time": "2016-08-06T14:39:51+00:00"
         },
         {
@@ -2472,9 +2431,6 @@
                 "psr",
                 "psr-3"
             ],
-            "support": {
-                "source": "https://github.com/php-fig/log/tree/1.1.4"
-            },
             "time": "2021-05-03T11:20:27+00:00"
         },
         {
@@ -5201,11 +5157,6 @@
                 }
             ],
             "description": "PHP Client for using Vonage's API.",
-            "support": {
-                "email": "devrel@nexmo.com",
-                "issues": "https://github.com/Vonage/vonage-php-sdk/issues",
-                "source": "https://github.com/Vonage/vonage-php-sdk/tree/2.4.0"
-            },
             "time": "2020-09-10T18:29:08+00:00"
         },
         {
@@ -5268,12 +5219,6 @@
             ],
             "description": "PHP Client for using Vonage's API.",
             "homepage": "https://developer.nexmo.com",
-            "support": {
-                "docs": "https://developer.nexmo.com",
-                "email": "devrel@vonage.com",
-                "issues": "https://github.com/Vonage/vonage-php-sdk-core/issues",
-                "source": "https://github.com/Vonage/vonage-php-sdk-core"
-            },
             "time": "2021-04-30T21:41:08+00:00"
         },
         {
@@ -5318,10 +5263,6 @@
                 }
             ],
             "description": "Provides a bridge for using the Vonage PHP SDK with the older Nexmo namespace",
-            "support": {
-                "issues": "https://github.com/Nexmo/vonage-php-nexmo-bridge/issues",
-                "source": "https://github.com/Nexmo/vonage-php-nexmo-bridge/tree/master"
-            },
             "time": "2020-08-25T02:50:42+00:00"
         },
         {
@@ -7650,5 +7591,5 @@
         "php": "^7.2.5"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "1.1.0"
 }
