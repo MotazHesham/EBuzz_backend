@@ -23,12 +23,22 @@ class UsersApiController extends Controller
             'city' => 'required',  
             'latitude' => 'required',  
             'longitude' => 'required',  
+            'country' => 'nullable',
+            'country_code' => 'nullable',
+            'state' => 'nullable',
+            'city' => 'nullable',
+            'road' => 'nullable',
         ];
         $user = Auth::user();
         $user->country = $request->country;
         $user->city = $request->city;
         $user->latitude = $request->latitude;
         $user->longitude = $request->longitude;
+        $user->country = $request->country;
+        $user->country_code = $request->country_code;
+        $user->state = $request->state;
+        $user->city = $request->city;
+        $user->road = $request->road;
         $user->save(); 
 
         return $this->returnSuccessMessage('Location Updated');

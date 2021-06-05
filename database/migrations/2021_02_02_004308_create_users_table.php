@@ -25,10 +25,13 @@ class CreateUsersTable extends Migration
             $table->integer('age')->nullable();
             $table->string('photo')->nullable();
             $table->string('sms_alert')->nullable();
+            $table->string('country')->nullable();
+            $table->string('country_code')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('road')->nullable();
             $table->double('latitude')->nullable();
             $table->double('longitude')->nullable();
-            $table->string('city')->nullable();
-            $table->string('country')->nullable();
             $table->tinyInteger('block')->default(0);
             $table->unsignedBigInteger('role_id');
             $table->foreign('role_id')->references('id')->on('roles')->onDelete('cascade');

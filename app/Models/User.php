@@ -14,7 +14,7 @@ class User extends Authenticatable
 
     protected $fillable = [
         'id','phone', 'password', 'first_name','last_name','address','gender','age',
-        'sms_alert','latitude','longitude','city','country','block','photo','role_id',
+        'sms_alert','latitude','longitude','country','country_code','state','city','road','block','photo','role_id',
     ];
 
     public function contacts()
