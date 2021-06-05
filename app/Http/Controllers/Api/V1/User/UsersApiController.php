@@ -52,7 +52,7 @@ class UsersApiController extends Controller
             'last_name' => 'required|max:30',
             'address' => 'required|max:255',
             'gender' => 'required',
-            'date_of_birth' => 'required|max:255', 
+            'age' => 'required|integer|size:100', 
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -83,5 +83,28 @@ class UsersApiController extends Controller
         return $this->returnSuccessMessage(__('Profile Updated Successfully')); 
     }
 
-    
+    public function update_sms_alert(Request $request){
+
+        $rules = [ 
+            'sms_alert' => 'required|max:255',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return $this->returnError('401', $validator->errors());
+        }
+
+        $user=User::find(Auth::id());
+
+        if(!$user)
+            return $this->returnError('404', "User Not Found"); 
+
+        $user->update($request->all());
+
+
+        return $this->returnSuccessMessage(__('Sms ALert Updated Successfully')); 
+    }
+
+
 }
