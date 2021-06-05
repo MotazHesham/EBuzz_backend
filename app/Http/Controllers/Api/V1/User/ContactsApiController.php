@@ -73,7 +73,7 @@ class ContactsApiController extends Controller
 
       $contacts=contact::where('user_id',Auth::id())->get();
 
-foreach( $contacts as $contact){
+/*foreach( $contacts as $contact){
 
 
         Nexmo::message()->send([
@@ -81,7 +81,15 @@ foreach( $contacts as $contact){
             'from' => auth()->user()->phone ,
             'text' => 'help me!!!'
         ]);
-        }
+        }*/
+
+
+        Nexmo::message()->send([
+            'to' =>  '01156865833',
+            'from' => auth()->user()->phone ,
+            'text' => 'help me!!!'
+        ]);
+
         return $this->returnSuccessMessage('send Successfully');
 
 
