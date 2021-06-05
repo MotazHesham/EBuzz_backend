@@ -18,6 +18,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
             Route::post('add','ContactsApiController@store') ;
             Route::get('delete/{contact_id}','ContactsApiController@delete') ;
             Route::get('view','ContactsApiController@view') ;
+            Route::get('sms','ContactsApiController@sms') ;
 
 
         });

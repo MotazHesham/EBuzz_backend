@@ -9,6 +9,7 @@ use App\Traits\api_return;
 use App\Models\Contact;
 use App\Http\Resources\V1\User\ContactResource;
 use Auth;
+use Nexmo\Laravel\Facade\Nexmo;
 
 class ContactsApiController extends Controller
 {
@@ -68,6 +69,23 @@ class ContactsApiController extends Controller
 
 
     }
+    public function sms(){
+
+        $contacts=contact::where('user_id',Auth::id())->get();
+
+foreach( $contacts as $contact){
+
+
+        Nexmo::message()->send([
+            'to' =>  $contact->phone,
+            'from' => auth()->user()->phone ,
+            'text' => 'help me!!!'
+        ]);
+        }
+        return $this->returnSuccessMessage('send Successfully');
+
+    }
+
 }
 
 
