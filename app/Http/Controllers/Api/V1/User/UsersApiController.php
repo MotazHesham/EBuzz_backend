@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use Auth;
 use App\Http\Resources\V1\User\UserResource;
 use App\Traits\api_return;
-use Validator;   
+use Validator;
 use Illuminate\Support\Facades\Storage;
 
 class UsersApiController extends Controller
@@ -20,9 +20,9 @@ class UsersApiController extends Controller
 
         $rules = [
             'country' => 'required',
-            'city' => 'required',  
-            'latitude' => 'required',  
-            'longitude' => 'required',  
+            'city' => 'required',
+            'latitude' => 'required',
+            'longitude' => 'required',
             'country' => 'nullable',
             'country_code' => 'nullable',
             'state' => 'nullable',
@@ -39,7 +39,7 @@ class UsersApiController extends Controller
         $user->state = $request->state;
         $user->city = $request->city;
         $user->road = $request->road;
-        $user->save(); 
+        $user->save();
 
         return $this->returnSuccessMessage('Location Updated');
     }
@@ -51,18 +51,18 @@ class UsersApiController extends Controller
 
         $new = new UserResource($user);
 
-        return $this->returnData($new , "success"); 
+        return $this->returnData($new , "success");
 
-    }  
+    }
 
     public function update(Request $request){
 
-        $rules = [ 
+        $rules = [
             'first_name' => 'required|max:30',
             'last_name' => 'required|max:30',
             'address' => 'required|max:255',
             'gender' => 'required',
-            'age' => 'required|integer', 
+            'age' => 'required|integer',
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -82,20 +82,20 @@ class UsersApiController extends Controller
             }
             $user->photo = Storage::disk('public')->put('uploads/user', $request->photo);
             $user->save();
-        } 
+        }
 
         if(!$user)
-            return $this->returnError('404', "User Not Found"); 
+            return $this->returnError('404', "User Not Found");
 
         $user->update($request->except('photo'));
 
 
-        return $this->returnSuccessMessage(__('Profile Updated Successfully')); 
+        return $this->returnSuccessMessage(__('Profile Updated Successfully'));
     }
 
     public function update_sms_alert(Request $request){
 
-        $rules = [ 
+        $rules = [
             'sms_alert' => 'required|max:255',
         ];
 
@@ -108,12 +108,32 @@ class UsersApiController extends Controller
         $user=User::find(Auth::id());
 
         if(!$user)
-            return $this->returnError('404', "User Not Found"); 
+            return $this->returnError('404', "User Not Found");
 
         $user->update($request->all());
 
 
-        return $this->returnSuccessMessage(__('Sms ALert Updated Successfully')); 
+        return $this->returnSuccessMessage(__('Sms ALert Updated Successfully'));
+    }
+
+
+    public function search_nearest()
+    {
+
+        $nerest1 = User::where('road', Auth::user()->road)->count();
+        $nerest11 = User::select('id')->where('road', Auth::user()->road)->get();
+        $nerest2 = User::where('state', Auth::user()->state)->count();
+        $nerest21 = User::select('id')->where('state', Auth::user()->state)->get();
+        $nerest3 = User::where('city', Auth::user()->city)->count();
+        $nerest31 = User::select('id')->where('city', Auth::user()->city)->get();
+
+        if ($nerest1>=50)
+        return $this->returnData($nerest11 , "success");
+        elseif($nerest2>=50)
+        return $this->returnData($nerest21 , "success");
+        else
+        return $this->returnData($nerest31 , "success");
+
     }
 
 

@@ -46,7 +46,7 @@
                             <div class="form-group">
 
                                 <input id="password" type="password" placeholder="Password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-
+                               
                                 @error('password')
                                 <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password">
                                   <strong>{{ $message }}</strong>
@@ -70,9 +70,13 @@
                                             {{ __('Forgot Your Password?') }}
                                         </a>
                                     @endif
+
+
                                 </div>
 
                         </form>
+
+
 
                     </div>
                 </div>

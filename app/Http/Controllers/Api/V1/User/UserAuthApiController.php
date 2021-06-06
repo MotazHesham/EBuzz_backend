@@ -25,9 +25,9 @@ class UserAuthApiController extends Controller
             return $this->returnError('401', $validator->errors());
         }
 
-        $user = User::where('phone',$request->phone)->first(); 
-        
-        if($user){ 
+        $user = User::where('phone',$request->phone)->first();
+
+        if($user){
             return $this->returnSuccessMessage(true);
         }else{
             return $this->returnSuccessMessage(false);
@@ -91,6 +91,6 @@ class UserAuthApiController extends Controller
             );
         } else {
             return $this->returnError('500',__('invalid username or password'));
-        } 
+        }
     }
 }
