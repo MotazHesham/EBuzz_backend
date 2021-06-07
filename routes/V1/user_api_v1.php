@@ -13,14 +13,14 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
     Route::group(['middleware' => ['auth:sanctum']],function () {
 
+        Route::post('fcm-token','UsersApiController@update_fcm_torkn');
+
         // contacts
         Route::group(['prefix' =>'contact'],function(){
             Route::post('add','ContactsApiController@store') ;
             Route::get('delete/{contact_id}','ContactsApiController@delete') ;
             Route::get('view','ContactsApiController@view') ;
             Route::get('sms','ContactsApiController@sms') ;
-
-
         });
 
         // reports

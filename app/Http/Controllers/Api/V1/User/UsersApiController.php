@@ -116,6 +116,29 @@ class UsersApiController extends Controller
         return $this->returnSuccessMessage(__('Sms ALert Updated Successfully'));
     }
 
+    public function update_fcm_torkn(Request $request){
+
+        $rules = [
+            'fcm_token' => 'required',
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return $this->returnError('401', $validator->errors());
+        }
+
+        $user=User::find(Auth::id());
+
+        if(!$user)
+            return $this->returnError('404', "User Not Found");
+
+        $user->update($request->all());
+
+
+        return $this->returnSuccessMessage(__('Token Updated Successfully'));
+    }
+
 
     public function search_nearest()
     {
