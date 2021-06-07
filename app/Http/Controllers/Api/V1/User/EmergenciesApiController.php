@@ -15,7 +15,14 @@ class EmergenciesApiController extends Controller
     use api_return;
 
     public function history(Request $request){
-        $emergencies = Emergency::where('user_id',Auth::id())->get(); 
-        return $this->returnData(EmergencyResource::collection($emergencies));
+        $emergencies = Emergency::where('user_id',Auth::id())->paginate(10); 
+        $new = EmergencyResource::collection($emergencies);
+        return $this->returnPaginationData($new,$emergencies,"success"); 
+    }
+    
+    public function activity(Request $request){
+        $emergencies = Emergency::paginate(10); 
+        $new = EmergencyResource::collection($emergencies);
+        return $this->returnPaginationData($new,$emergencies,"success"); 
     }
 }

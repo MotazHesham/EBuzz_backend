@@ -136,5 +136,22 @@ class UsersApiController extends Controller
 
     }
 
+  public function search_nearest()
+    {
 
+        $nerest1 = User::where('road', Auth::user()->road)->count();
+        $nerest11 = User::select('id')->where('road', Auth::user()->road)->get();
+        $nerest2 = User::where('state', Auth::user()->state)->count();
+        $nerest21 = User::select('id')->where('state', Auth::user()->state)->get();
+        $nerest3 = User::where('city', Auth::user()->city)->count();
+        $nerest31 = User::select('id')->where('city', Auth::user()->city)->get();
+
+        if ($nerest1>=50)
+        return $this->returnData($nerest11 , "success");
+        elseif($nerest2>=50)
+        return $this->returnData($nerest21 , "success");
+        else
+        return $this->returnData($nerest31 , "success");
+    }
+ 
 }
