@@ -116,7 +116,7 @@ class UsersApiController extends Controller
         return $this->returnSuccessMessage(__('Sms ALert Updated Successfully'));
     }
 
-    public function update_fcm_torkn(Request $request){
+    public function update_fcm_token(Request $request){
 
         $rules = [
             'fcm_token' => 'required',
@@ -140,23 +140,6 @@ class UsersApiController extends Controller
     }
 
 
-    public function search_nearest()
-    {
 
-        $nerest11 = User::select('id')->where('id','!=',Auth::id())->where('road', Auth::user()->road)->get();
-        if ($nerest11->count() >= 50){
-            return $this->returnData($nerest11 , "success");
-        }else{
-            $nerest21 = User::select('id')->where('id','!=',Auth::id())->where('state', Auth::user()->state)->get();
-            if($nerest21->count() >= 50){
-                return $this->returnData($nerest21 , "success");
-            }else{
-                $nerest31 = User::select('id')->where('id','!=',Auth::id())->where('city', Auth::user()->city)->get();
-                return $this->returnData($nerest31 , "success");
-            }
-        } 
-        
-
-    }
 
 }

@@ -13,7 +13,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
     Route::group(['middleware' => ['auth:sanctum']],function () {
 
-        Route::post('fcm-token','UsersApiController@update_fcm_torkn');
+        Route::post('fcm-token','UsersApiController@update_fcm_token');
 
         // contacts
         Route::group(['prefix' =>'contact'],function(){
@@ -35,10 +35,10 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         });
 
         //emergencies
-        Route::group(['prefix' =>''],function(){
+        Route::group(['prefix' =>'emergencies'],function(){
             Route::get('history','EmergenciesApiController@history') ;
             Route::get('activity','EmergenciesApiController@activity') ;
-            Route::get('search_nearest','UsersApiController@search_nearest') ;
+            Route::get('start_emergency','EmergenciesApiController@StartEmergency') ;
         });
         
         //notifications

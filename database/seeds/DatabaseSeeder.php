@@ -15,13 +15,13 @@ class DatabaseSeeder extends Seeder
             PermissionSeeder::class,
             RoleSeeder::class,
             PermissionRoleSeeder::class,
-            UserSeeder::class,
-            EmergencySeeder::class,
-            FeedbackSeeder::class,
-            NotificationSeeder::class,
-            ReportSeeder::class,
-            ContactSeeder::class,
-            VideoSeeder::class,
+            // UserSeeder::class,
+            // EmergencySeeder::class,
+            // FeedbackSeeder::class,
+            // NotificationSeeder::class,
+            // ReportSeeder::class,
+            // ContactSeeder::class,
+            // VideoSeeder::class,
         ]);
     }
 }
