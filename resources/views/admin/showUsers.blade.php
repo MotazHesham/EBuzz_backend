@@ -4,7 +4,7 @@
 
     <div class="card">
         <div class="card-header">
-           Users
+            Users
         </div>
 
         <div class="card-body">
@@ -13,26 +13,23 @@
                     <thead>
                     <tr>
 
-                        <th> id </th>
+                        <th width="10"> id </th>
                         <th> Phone </th>
                         <th> First Name </th>
                         <th> Last Name </th>
                         <th> address </th>
                         <th> gender </th>
-                        <th> date_of_birth </th>
+                        <th> age </th>
                         <th> sms_alert </th>
                         <th> city </th>
                         <th> country </th>
                         <th>role_id</th>
                         <th># reports</th>
-                        <th>Details Of reports</th>
+                        <th></th>
 
 
                     </tr>
-                    </thead>
-                    <tbody>
-
-                    </tbody>
+                    </thead> 
                 </table>
             </div>
         </div>
@@ -63,7 +60,7 @@
                         { data: 'last_name', name: 'last_name' },
                         { data: 'address', name: 'address' },
                         { data: 'gender', name: 'gender' },
-                        { data: 'date_of_birth', name: 'date_of_birth' },
+                        { data: 'age', name: 'age' },
                         { data: 'sms_alert', name: 'sms_alert' },
                         { data: 'city', name: 'city' },
                         { data: 'country', name: 'country' },

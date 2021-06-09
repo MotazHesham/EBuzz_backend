@@ -1,42 +1,85 @@
 
-    <div class="wrapper d-flex align-items-stretch">
+    <div id="sidebar" class="c-sidebar c-sidebar-fixed c-sidebar-lg-show" style="background-image:   url('{{asset('images/bg_1.jpg')}}');"> 
 
-        <nav id="sidebar" class="order-last" class="img" style="background-image:   url('{{asset('images/bg_1.jpg')}}');">
-            <div class="custom-menu">
-                <button type="button" id="sidebarCollapse" class="btn btn-primary">
-        </button>
+      <div class="c-sidebar-brand d-md-down-none"> 
+        <a class="c-sidebar-brand-full h4" href="#">
+          Ebuzz
+        </a>
     </div>
-    <div class="">
-              <h1><a href="#" class="logo">Ebuzz <span>Emergency application</span></a></h1>
-        <ul class="list-unstyled components mb-5">
-          <li class="active">
-            <a href="#"><span class="fa fa-home mr-3"></span> Home</a>
-          </li>
-          <li>
 
-              <a href="{{route('showuser')}}"><span class="fa fa-user mr-3"></span> Users</a>
-          </li>
-          <li>
-            <a href="{{route('showrole')}}"><span class="fa fa-group mr-3"></span>  User Managment </a>
-        </li>
-        <li>
-            <a href="{{route('showEmergency')}}"><span  class="fa fa-question-circle mr-3" ></span> Emergency </a>
-        </li>
-          <li>
-          <a href="ShowReports"><span class="	fa fa-minus-circle mr-3"></span> Reports</a>
-          </li>
-          <li>
-          <a href="{{route('logout')}}"><span class="fa fa-sign-out mr-3"></span> sign out</a>
-          </li>
-        </ul>
+      <ul class="c-sidebar-nav">
 
+          <li class="c-sidebar-nav-item">
+              <a href="#" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  Home
+              </a>
+          </li>   
 
-    </nav>
+          <li class="c-sidebar-nav-item">
+              <a href="{{route('showuser')}}" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  Users
+              </a>
+          </li>   
 
-    <!-- Page Content  -->
-  <div id="content" class="p-4 p-md-5 pt-5">
-@yield('con')
+          <li class="c-sidebar-nav-item">
+              <a href="{{route('showrole')}}" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  User Managment
+              </a>
+          </li>   
+
+          <li class="c-sidebar-nav-item">
+              <a href="{{route('showEmergency')}}" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  Emergency
+              </a>
+          </li>   
+
+          <li class="c-sidebar-nav-item">
+              <a href="#" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  Reports
+              </a>
+          </li>   
+
+          <li class="c-sidebar-nav-item">
+              <a href="{{route('logout')}}" class="c-sidebar-nav-link">
+                  <i class="c-sidebar-nav-icon fas fa-fw fa-tachometer-alt">
+  
+                  </i>
+                  sign out
+              </a>
+          </li>  
+  
+          
+      </ul>
+  
   </div>
-    </div>
-
-
+  
+  <div class="modal fade" id="exampleModal"  role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel"></h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+              </div>
+              <div class="modal-body"> 
+                  ##
+              </div>
+          </div>
+      </div>
+  </div>

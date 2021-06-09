@@ -14,7 +14,7 @@ class UserController extends Controller
     public function user (Request $request)
     {
         if ($request->ajax()) {
-            $query = User::select('id','phone', 'password', 'first_name','last_name','address','gender','date_of_birth',
+            $query = User::select('id','phone', 'password', 'first_name','last_name','address','gender','age',
                 'sms_alert','city','country','role_id');
 
             $table = Datatables::of($query);
@@ -23,7 +23,7 @@ class UserController extends Controller
 
                 $num=DB::table('report_users')->where('user_reported_id',$query->id)->count();
                 return $num ;})->addColumn('action', function( $query){
-                            $actionBtn = '<button type="button" class="btn btn-primary"   onclick="getReports('.$query->id .')" >Show Details</button>';
+                            $actionBtn = '';
                             return $actionBtn;
                         })
                         ->rawColumns(['action'])->make(true);
