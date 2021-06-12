@@ -14,8 +14,7 @@ class CreateEmergenciesTable extends Migration
     public function up()
     {
         Schema::create('emergencies', function (Blueprint $table) {
-            $table->id(); 
-            $table->datetime('date');
+            $table->id();
             $table->string('country')->nullable();
             $table->string('country_code')->nullable();
             $table->string('state')->nullable();

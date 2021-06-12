@@ -21,8 +21,9 @@ class EmergencyResource extends JsonResource
         return [
             'id'=>$this->id,
             'user_name' => $this->user->first_name . ' ' . $this->user->last_name,
+            'phone' => $this->user->phone,
             'photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
-            'date' => $this->date ? $this->calculate_diff_date($this->date) : '',
+            'date' => $this->created_at ? $this->calculate_diff_date($this->created_at) : '',
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
             'country' => $this->country,
