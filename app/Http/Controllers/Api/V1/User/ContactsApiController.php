@@ -10,6 +10,7 @@ use App\Models\Contact;
 use App\Http\Resources\V1\User\ContactResource;
 use Auth;
 use Nexmo\Laravel\Facade\Nexmo;
+use Illuminate\Support\Str;
 
 class ContactsApiController extends Controller
 {
@@ -71,25 +72,49 @@ class ContactsApiController extends Controller
     }
     public function sms(){
 
-        $contacts=Contact::where('user_id',Auth::id())->get();
+           $contacts=Contact::where('user_id',Auth::id())->get();
 
-foreach( $contacts as $contact){
+           $user=auth()->user();
+
+   foreach( $contacts as $contact){
+
+           $num=$contact->phone;
+
+                 if(strlen($num)>11)
+           $num=Str::substr($num,2, 11);
+
+            $sms_alert= $user->sms_alert;
+
+                  if(!empty($sms_alert))
+            $sms='from '.$user->first_name . " " . $user->last_name .' mobile number '. $user->phone .  $sms_alert .'  in  ' . $user->road . ' in ' . $user->city  ;
+
+                   else
+            $sms='from '.$user->first_name . " " . $user->last_name .' mobile number '. $user->phone .' help me I am In danger in  '. $user->road . '  in ' . $user->city . ' need help' ;
+
+            try{
+                  Nexmo::message()->send([
+
+                         'to' =>  '+2 '. $num,
+
+                         'from' => $user->phone ,
+                         'text' => $sms ,
+                               ]);
+
+       return response()->json($num);
+
+}
+        catch (\Exception $e) {
 
 
-       Nexmo::message()->send([
-            'to' =>  $contact->phone,
-            'from' => auth()->user()->phone ,
-            'text' => 'help me!!!'
-        ]);
-        // return response()->json($contact->phone);
 
-        }
-       return $contacts;
-    }
-    
+   return $this->returnError('404',('Something went wrong'));
 
+}
 
-    }
+}
 
+}
+
+}
 
 
