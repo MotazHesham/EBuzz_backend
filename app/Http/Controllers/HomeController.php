@@ -27,9 +27,17 @@ class HomeController extends Controller
     { 
         if (auth()->user() && auth()->user()->role_id == 1) {
             return redirect()->route('admin');
-        }else{
-            abort(403);
         }
+        elseif((auth()->user() && auth()->user()->role_id == 2)) {
+            return view('auth.login');
+           
+        }
+        
+        else
+        {
+             abort(403);
+        }
+        
     }
 
 

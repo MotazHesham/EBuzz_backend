@@ -36,7 +36,7 @@ class EmergenciesController extends Controller
                     return $emergency->user->last_name;})->addColumn('User_Phone', function (Emergency $emergency) {
                         return $emergency->user->phone;})->addColumn('action', function( Emergency $row){
 
-                            $actionBtn = '<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
+                            $actionBtn = '<button type="button" class="btn btn-primary"  onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
                             return $actionBtn;
                         })
                         ->rawColumns(['action'])->make(true);

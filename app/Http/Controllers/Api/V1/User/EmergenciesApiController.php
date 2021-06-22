@@ -12,6 +12,7 @@ use Validator;
 use Auth;
 use App\Http\Resources\V1\User\EmergencyResource;
 use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Str;
 
 class EmergenciesApiController extends Controller
 {
@@ -76,5 +77,8 @@ class EmergenciesApiController extends Controller
         }
 
         return $this->returnSuccessMessage(__('Notification Sent Successfully'));
-    }
+        
+
+    
+}
 }
