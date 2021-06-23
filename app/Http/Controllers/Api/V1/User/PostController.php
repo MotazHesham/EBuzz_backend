@@ -70,6 +70,11 @@ class PostController extends Controller
     }
 
     $post=Post::find($request->post_id);
+    if(!$post)
+
+    return $this->returnError('404', "post Not Found");
+
+    else{
 
     if (request()->hasFile('photo') && request('photo') != '' && request('photo') != $post->photo){
         $validator = Validator::make($request->all(), [
@@ -82,11 +87,9 @@ class PostController extends Controller
         $post->save();
     }
 
-    if(!$post)
-        return $this->returnError('404', "post Not Found");
 
     $post->update($request->except('photo'));
-
+    }
 
     return $this->returnSuccessMessage('post Updated Successfully');
 }
