@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Post;
 use App\Traits\api_return;
 use Validator;
+use Auth;
 use Illuminate\Support\Facades\Storage;
 
 class PostController extends Controller
