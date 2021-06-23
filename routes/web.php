@@ -18,7 +18,7 @@ Route::get('/normal', 'Admin\ContactController@normal');
 Route::get('/ajax', 'Admin\ContactController@ajax')->name('ajax');
 
 
-
+Route::get('/login', 'HomeController@login')->name('login');
 
 Route::resource('contacts', 'ContactController');
 

@@ -19,7 +19,7 @@ class CitySeeder extends Seeder
 
         for ($i = 1 ; $i <= 20 ; $i++) {
         $city=new City();
-        $city->name=$cities[rand(0,1)];
+        $city->name=$cities[rand(0,1,2)];
 
     }
 }

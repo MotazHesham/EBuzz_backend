@@ -40,7 +40,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
             Route::get('activity','EmergenciesApiController@activity') ;
             Route::get('start','EmergenciesApiController@start') ;
         });
-        
+
         //notifications
         Route::group(['prefix' =>'notifications'],function(){
             Route::get('/','NotificationsAPiController@user_notifications');
@@ -51,6 +51,12 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
             Route::get('/','UsersApiController@profile');
             Route::post('update','UsersApiController@update');
             Route::post('update_sms_alert','UsersApiController@update_sms_alert');
+        });
+
+         //cities
+         Route::group(['prefix' =>'city'],function(){
+            Route::get('view','CityApiController@index');
+
         });
 
     });
