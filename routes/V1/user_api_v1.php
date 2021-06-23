@@ -54,11 +54,16 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         });
 
          //cities
-         Route::group(['prefix' =>'city'],function(){
+         Route::group(['prefix' =>'cities'],function(){
             Route::get('view','CityApiController@index');
 
         });
 
+                //post
+                Route::group(['prefix' =>'posts'],function(){
+                    Route::get('delete','PostController@delete');
+
+                });
     });
 });
 
