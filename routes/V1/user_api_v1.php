@@ -61,7 +61,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
                 //post
                 Route::group(['prefix' =>'posts'],function(){
-                    Route::get('delete','PostController@delete');
+                    Route::get('delete/{post_id}','PostController@delete');
 
                 });
     });
