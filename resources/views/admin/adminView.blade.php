@@ -24,7 +24,7 @@
 <body>
   <div class="container-scroller">
     <!-- partial:partials/_navbar.html -->
-            @include('layouts.sidebar')
+
       <!-- partial -->
       <div class="main-panel">
         <div class="content-wrapper">
