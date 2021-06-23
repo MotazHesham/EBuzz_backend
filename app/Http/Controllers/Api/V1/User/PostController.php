@@ -25,7 +25,6 @@ class PostController extends Controller
             'description' => 'required',
             'city_id' => 'required',
 
-
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -54,6 +53,43 @@ class PostController extends Controller
 
 
       }
+
+   //--------------------update post
+   public function update(Request $request){
+
+        $rules = [
+            'description' => 'required',
+            'city_id' => 'required',
+
+        ];
+
+    $validator = Validator::make($request->all(), $rules);
+
+    if ($validator->fails()) {
+        return $this->returnError('401', $validator->errors());
+    }
+
+    $post=Post::find($request->post_id);
+
+    if (request()->hasFile('photo') && request('photo') != '' && request('photo') != $post->photo){
+        $validator = Validator::make($request->all(), [
+            'photo' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+        if ($validator->fails()) {
+            return $this->returnError('401', $validator->errors());
+        }
+        $post->photo = Storage::disk('public')->put('uploads/posts', $request->photo);
+        $post->save();
+    }
+
+    if(!$post)
+        return $this->returnError('404', "post Not Found");
+
+    $post->update($request->except('photo'));
+
+
+    return $this->returnSuccessMessage('post Updated Successfully');
+}
 
 
     //----------------------------------------delete post
