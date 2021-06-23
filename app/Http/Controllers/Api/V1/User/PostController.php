@@ -45,7 +45,7 @@ class PostController extends Controller
             if ($validator->fails()) {
                 return $this->returnError('401', $validator->errors());
             }
-            $post->photo = Storage::disk('public')->put('uploads/user', $request->photo);
+            $post->photo = Storage::disk('public')->put('uploads/posts', $request->photo);
 
         }
 
