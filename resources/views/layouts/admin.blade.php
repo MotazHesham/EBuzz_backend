@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
@@ -20,7 +20,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/jquery.perfect-scrollbar/1.5.0/css/perfect-scrollbar.min.css" rel="stylesheet" />
     {{-- <link rel="stylesheet" href="{{asset('/css/admin/style.css')}}"> --}}
     <link href="{{ asset('css/admin/custom.css') }}" rel="stylesheet" />
-  </head>
+</head>
     @yield('styles')
 </head>
 
@@ -95,7 +95,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.5/js/select2.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/dropzone/5.5.1/min/dropzone.min.js"></script>
     {{-- <script src="{{asset('js/side.js')}}"></script> --}}
-    <script src="{{ asset('admin/main.js') }}"></script>
+    {{-- <script src="{{ asset('admin/main.js') }}"></script> --}}
     <script>
 
         $(function() {

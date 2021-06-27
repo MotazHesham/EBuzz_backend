@@ -9,41 +9,35 @@ use Yajra\DataTables\Facades\DataTables;
 use Illuminate\Http\Request;
 
 class EmergenciesController extends Controller
-{
+{ 
 
+    public function getEmergency(Request $request){
 
+        if ($request->ajax()) { 
 
-
-     public function getEmergency(Request $request){
-
-        if ($request->ajax()) {
-       /*     $query = User::has('emergency')->with('emergency');
-
+            $query = Emergency::with('user')->get();
             $table = Datatables::of($query);
 
-            return $table->addColumn('emergency_date', function (User $User) {
-                return $User->emergency->date;})->addColumn('emergency_lat', function (User $User) {
-                    return $User->emergency->latitude;})->addColumn('emergency_long', function (User $User) {
-                        return $User->emergency->longitude;})->make(true);
-        }*/
 
-
-            $query = Emergency::with('User');
-            $table = Datatables::of($query);
-
-            return $table->addColumn('User_firstName', function (Emergency $emergency) {
-                return $emergency->user->first_name;})->addColumn('User_Last_Name', function (Emergency $emergency) {
-                    return $emergency->user->last_name;})->addColumn('User_Phone', function (Emergency $emergency) {
-                        return $emergency->user->phone;})->addColumn('action', function( Emergency $row){
-
-                            $actionBtn = '<button type="button" class="btn btn-primary"  onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
-                            return $actionBtn;
-                        })
-                        ->rawColumns(['action'])->make(true);
+            $table->editColumn('action',function($row){
+                return '<button type="button" class="btn btn-primary"  onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
+            });
+            $table->editColumn('User_firstName',function($row){
+                return $row->user->first_name ?? '';
+            });
+            $table->editColumn('User_Last_Name',function($row){
+                return $row->user->last_name ?? '';
+            });
+            $table->editColumn('User_Phone',function($row){
+                return $row->user->phone ?? '';
+            });
+            $table->editColumn('date',function($row){
+                return $row->created_at ?? '';
+            });
+            
+            return $table->make(true); 
         }
 
-        return view('admin.showEmergency');
-
-
+        return view('admin.showEmergency'); 
     }
 }

@@ -41,8 +41,7 @@ class RouteServiceProvider extends ServiceProvider
      * @return void
      */
     public function map()
-    {
-        $this->mapAdminApiV1Routes();
+    { 
         $this->mapUserApiV1Routes();
 
         $this->mapWebRoutes();
@@ -62,15 +61,6 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
-    }
-
-    // admin v1 api routes
-    protected function mapAdminApiV1Routes()
-    {
-        Route::prefix('api')
-            ->middleware('api')
-            ->namespace($this->namespace)
-            ->group(base_path('routes/V1/admin_api_v1.php'));
     }
 
     // user v1 api routes

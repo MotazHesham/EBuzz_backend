@@ -27,9 +27,9 @@ class User extends Authenticatable
         return $this->hasMany(Emergency::class);
     }
 
-    public function reports()
+    public function users()
     {
-        return $this->belongsToMany(Report::class,'report_users','user_reported_id','report_id')->withpivot(['user_reporter_id','note']);
+        return $this->belongsToMany(User::class,'report_users','user_reported_id','user_reporter_id')->withpivot(['report_id','note']);
     }
 
     public function nearest_user()
@@ -39,7 +39,7 @@ class User extends Authenticatable
 
     public function role()
     {
-        return $this->hasOne(Role::class);
+        return $this->belongTo(Role::class);
     }
 
     public function posts()

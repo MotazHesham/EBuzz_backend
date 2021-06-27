@@ -16,10 +16,10 @@ class admin
      */
     public function handle($request, Closure $next )
     {
-        if(auth()->user() && auth()->user()->role_id ==1){
+        if(auth()->user() && auth()->user()->role_id == 1){
             return $next($request);
         }else{
-            return redirect("home");
+            return redirect()->route("home");
         }
     }
 }

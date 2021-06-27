@@ -1,39 +1,5 @@
 
-/* my custom design */
-
-/* .action-buttons-view{
-    display: inline;
-    box-shadow: 0px 0px 7px #3399ff9e;
-}
-
-.action-buttons-edit{
-    display: inline;
-    box-shadow: 0px 0px 7px #2fc2a29e;
-}
-
-.action-buttons-delete{
-    box-shadow: 0px 0px 7px #d444639e;
-    margin-top: 14px;
-    margin-bottom: 14px;
-} */
-
-#sidebar .c-sidebar-nav-link ,#sidebar .c-sidebar-nav-dropdown-toggle{
-    color:black
-}
-#sidebar .c-sidebar-nav-link:hover ,#sidebar .c-sidebar-nav-dropdown-toggle:hover{
-    color: white
-}
-.c-sidebar .c-sidebar-nav-dropdown.c-show {
-    background: rgb(173 173 173 / 20%);
-}
-
-.c-sidebar .c-sidebar-nav-dropdown-toggle:hover, .c-sidebar .c-sidebar-nav-link:hover {
-    background: #958fca;
-}
-.c-sidebar .c-active.c-sidebar-nav-dropdown-toggle, .c-sidebar .c-sidebar-nav-link.c-active {
-    background: #958fca;
-    color:#fff !important
-}
+/* my custom design */ 
 .c-sidebar-nav-dropdown-items {
     padding-left: 8%;
 }

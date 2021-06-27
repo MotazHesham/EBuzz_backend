@@ -23,6 +23,7 @@ class CreateEmergenciesTable extends Migration
             $table->double('latitude');
             $table->double('longitude');
             $table->unsignedBigInteger('user_id');
+            $table->tinyInteger('status')->default(1);
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
