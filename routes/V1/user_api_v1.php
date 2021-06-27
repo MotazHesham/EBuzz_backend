@@ -53,9 +53,15 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
             Route::post('update_sms_alert','UsersApiController@update_sms_alert');
         });
 
-         //cities
-         Route::group(['prefix' =>'cities'],function(){
+        //cities
+        Route::group(['prefix' =>'cities'],function(){
             Route::get('view','CityApiController@index');
+
+        });
+        
+        //users
+        Route::group(['prefix' =>'users'],function(){
+            Route::get('all','UsersApiController@users');
 
         });
 

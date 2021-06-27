@@ -15,6 +15,28 @@ use Illuminate\Support\Facades\Storage;
 class UsersApiController extends Controller
 {
     use api_return;
+    
+    public function users(Request $request){
+        
+        $user = Auth::user();
+        
+        $nearst_users = User::where('id','!=',$user->id)->where('road', $user->road)->get()->take(50);
+        if ($nearst_users->count() < 50){
+            $nearst_users = User::where('id','!=',$user->id)->where('city', $user->city)->get()->take(50);
+            if($nearst_users->count() < 50){
+                $nearst_users = User::where('id','!=',$user->id)->where('state', $user->state)->get()->take(50); 
+                if($nearst_users->count() < 50){
+                    $nearst_users = User::where('id','!=',$user->id)->where('country', $user->country)->get()->take(50); 
+                    if($nearst_users->count() < 50){
+                        $nearst_users = User::where('id','!=',$user->id)->get()->take(50); 
+                    }
+                }
+            } 
+        }
+        
+        return $this->returnData(UserResource::collection($nearst_users),"success"); 
+        
+    }
 
     public function update_location(Request $request){
 
