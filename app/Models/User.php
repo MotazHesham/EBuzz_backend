@@ -29,13 +29,8 @@ class User extends Authenticatable
 
     public function users()
     {
-        return $this->belongsToMany(User::class,'report_users','user_reported_id','user_reporter_id')->withpivot(['report_id','note']);
-    }
-
-    public function nearest_user()
-    {
-        return $this->belongsToMany(User::class,'nearest_users');
-    }
+        return $this->belongsToMany(User::class,'report_users','user_reported_id','user_reporter_id')->withpivot(['reason']);
+    } 
 
     public function role()
     {

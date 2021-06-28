@@ -5,7 +5,7 @@ namespace App\Http\Resources\V1\User;
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Traits\date_trait;
 
-class EmergencyResource extends JsonResource
+class PostResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -21,18 +21,11 @@ class EmergencyResource extends JsonResource
         return [
             'id'=>$this->id,
             'user_name' => $this->user->first_name . ' ' . $this->user->last_name,
-            'phone' => $this->user->phone,
-            'photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
+            'user_photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
             'date' => $this->created_at ? $this->calculate_diff_date($this->created_at) : '',
-            'latitude' => $this->latitude,
-            'longitude' => $this->longitude,
-            'country' => $this->country,
-            'country_code' => $this->country_code,
-            'state' => $this->state,
-            'city' => $this->city,
-            'road' => $this->road,
-            'notification_count' => count($this->notification),
-            'massage_count' => 1,
+            'description' => $this->description,
+            'photo' => asset('storage/'.$this->photo),
+            'city' => $this->city->name,
         ];
     }
 }

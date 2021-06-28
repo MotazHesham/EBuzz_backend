@@ -28,7 +28,7 @@ class ReportsApiController extends Controller
         $rules = [
             'report_id' => 'required',
             'user_reported_id' => 'required', 
-            'note' => 'nullable|max:100'
+            'reason' => 'nullable|max:255'
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -43,8 +43,7 @@ class ReportsApiController extends Controller
           [
             'user_reporter_id' => auth()->user()->id,
             'user_reported_id' => $request->user_reported_id,
-            'report_id' => $request->report_id,
-            'note' => $request->note,
+            'reason' => $request->reason,
           ]
         );
 

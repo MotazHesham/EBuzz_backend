@@ -9,22 +9,30 @@ use App\Traits\api_return;
 use Validator;
 use Auth;
 use Illuminate\Support\Facades\Storage;
+use App\Http\Resources\V1\User\PostResource;
 
 class PostController extends Controller
 {
 
     use api_return;
 
+    //----------------------------------------view posts
+    public function posts(Request $request){
+        $posts = Post::where('user_id','!=',Auth::id())->orderBy('created_at','desc')->paginate(10); 
+        $new = PostResource::collection($posts);
+        return $this->returnPaginationData($new,$posts,"success"); 
+    }
+    //----------------------------------------
+
 
     //----------------------------------------add post
 
     public function create(Request $request){
 
-         $post=new Post();
-         $rules = [
+        $post=new Post();
+        $rules = [
             'description' => 'required',
             'city_id' => 'required',
-
         ];
 
         $validator = Validator::make($request->all(), $rules);
@@ -50,12 +58,10 @@ class PostController extends Controller
 
         $post->save();
         return $this->returnSuccessMessage('post added Successfully');
+    }
 
-
-      }
-
-   //--------------------update post
-   public function update(Request $request){
+    //--------------------update post
+    public function update(Request $request){
 
         $rules = [
             'description' => 'required',

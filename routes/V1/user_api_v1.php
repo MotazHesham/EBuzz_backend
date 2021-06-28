@@ -62,18 +62,15 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         //users
         Route::group(['prefix' =>'users'],function(){
             Route::get('all','UsersApiController@users');
-
         });
 
-                //post
-                Route::group(['prefix' =>'posts'],function(){
-
-                    Route::post('create','PostController@create');
-                    Route::post('update','PostController@update');
-                    Route::get('delete/{post_id}','PostController@delete');
-
-
-                });
+        //post
+        Route::group(['prefix' =>'posts'],function(){ 
+            Route::get('/','PostController@posts');
+            Route::post('create','PostController@create');
+            Route::post('update','PostController@update');
+            Route::get('delete/{post_id}','PostController@delete'); 
+        });
     });
 });
 

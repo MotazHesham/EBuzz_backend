@@ -32,7 +32,7 @@ class EmergenciesApiController extends Controller
     
     public function start()
     {
-
+        
         $user = Auth::user();
         $emergency = new Emergency;
         $emergency->user_id = $user->id;

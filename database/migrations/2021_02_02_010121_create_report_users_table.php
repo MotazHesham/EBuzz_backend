@@ -14,13 +14,11 @@ class CreateReportUsersTable extends Migration
     public function up()
     {
         Schema::create('report_users', function (Blueprint $table) {
-            $table->string('note')->nullable();
+            $table->string('reason')->nullable();
             $table->unsignedBigInteger('user_reported_id');
             $table->unsignedBigInteger('user_reporter_id');
-            $table->unsignedBigInteger('report_id');
             $table->foreign('user_reported_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('user_reporter_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('report_id')->references('id')->on('reports')->onDelete('cascade');
 
         });
     }

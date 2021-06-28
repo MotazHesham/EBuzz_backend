@@ -4,6 +4,9 @@
 
 <div class="row">
     <div class="col-md-8">
+        <h3>
+            Latest Emergencies
+        </h3>
         <div id="map" style="width: 750px;height:500px"></div>
     </div>
     <div class="col-md-4"></div>
