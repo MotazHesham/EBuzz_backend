@@ -9,6 +9,7 @@ use App\Models\User;
 use App\Traits\api_return;
 use Illuminate\Http\Request;
 use Validator;
+use Auth;
 use App\Http\Resources\V1\User\ReportResource;
 
 class ReportsApiController extends Controller
