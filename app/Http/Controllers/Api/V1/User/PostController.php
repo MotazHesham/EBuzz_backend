@@ -18,7 +18,7 @@ class PostController extends Controller
 
     //----------------------------------------view posts
     public function posts(Request $request){
-        $posts = Post::where('user_id','!=',Auth::id())->orderBy('created_at','desc')->paginate(10); 
+        $posts = Post::where('user_id','!=',Auth::id())->where('status',1)->orderBy('created_at','desc')->paginate(10); 
         $new = PostResource::collection($posts);
         return $this->returnPaginationData($new,$posts,"success"); 
     }
