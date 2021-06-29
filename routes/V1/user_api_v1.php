@@ -67,6 +67,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         //post
         Route::group(['prefix' =>'posts'],function(){ 
             Route::get('/','PostController@posts');
+            Route::get('/my_posts','PostController@my_posts');
             Route::post('create','PostController@create');
             Route::post('update','PostController@update');
             Route::get('delete/{post_id}','PostController@delete'); 

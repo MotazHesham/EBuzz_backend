@@ -24,6 +24,14 @@ class PostController extends Controller
     }
     //----------------------------------------
 
+    //----------------------------------------my posts
+    public function my_posts(Request $request){
+        $posts = Post::where('user_id',Auth::id())->orderBy('created_at','desc')->paginate(10); 
+        $new = PostResource::collection($posts);
+        return $this->returnPaginationData($new,$posts,"success"); 
+    }
+    //----------------------------------------
+
 
     //----------------------------------------add post
 
