@@ -37,7 +37,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 </style>
     <title>welcome</title>
 </head>
-<body  style=" background-image: url('{{asset('images/gp4.jpg')}}');background-size: cover;">
+<body  style=" background-image: url('{{asset('images/welcome.jpg')}}');background-size: cover;">
 
     <div class="navbar">
         <a class="active" href="#"><i class="fa fa-fw fa-home"></i> Home</a>
