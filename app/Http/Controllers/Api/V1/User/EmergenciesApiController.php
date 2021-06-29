@@ -30,9 +30,10 @@ class EmergenciesApiController extends Controller
         return $this->returnPaginationData($new,$emergencies,"success"); 
     }
 
-    public function stop($id){
+    public function stop($id,$feedback){
         $emergency = Emergency::find($id);
         $emergency->status = 0;
+        $emergency->feedback = $feedback;
         $emergency->save();
         return $this->returnSuccessMessage('Success Closed Live');
     }

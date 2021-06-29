@@ -39,7 +39,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
             Route::get('history','EmergenciesApiController@history') ;
             Route::get('activity','EmergenciesApiController@activity') ;
             Route::get('start','EmergenciesApiController@start') ;
-            Route::get('stop/{id}','EmergenciesApiController@stop') ;
+            Route::get('stop/{id}/{feedback}','EmergenciesApiController@stop') ;
         });
 
         //notifications

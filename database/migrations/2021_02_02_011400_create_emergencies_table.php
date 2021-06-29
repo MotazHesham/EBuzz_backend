@@ -24,7 +24,7 @@ class CreateEmergenciesTable extends Migration
             $table->double('longitude');
             $table->unsignedBigInteger('user_id');
             $table->tinyInteger('status')->default(1);
-            $table->tinyInteger('feedback')->default(0);
+            $table->string('feedback')->nullable();
             $table->integer('mssg_count');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
