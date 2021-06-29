@@ -18,6 +18,14 @@ class PostResource extends JsonResource
     
     public function toArray($request)
     { 
+        $status = '';
+        if($this->status == 0){
+            $status = 'pending';
+        }elseif($this->status == 1){
+            $status = 'Accepted';
+        }elseif($this->status == 2){
+            $status = 'Refused';
+        }
         return [
             'id'=>$this->id,
             'user_name' => $this->user->first_name . ' ' . $this->user->last_name,
@@ -27,7 +35,7 @@ class PostResource extends JsonResource
             'photo' => asset('storage/'.$this->photo),
             'city' => $this->city->name,
             'city_id' => $this->city_id,
-            'status' => $this->status,
+            'status' => $status,
         ];
     }
 }
