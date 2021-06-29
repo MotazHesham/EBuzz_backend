@@ -39,8 +39,10 @@ class EmergenciesApiController extends Controller
     
     public function start()
     {
+        
 
         $user = Auth::user();
+        
         $emergency = new Emergency;
         $emergency->user_id = $user->id;
         $emergency->country = $user->country;
@@ -50,6 +52,7 @@ class EmergenciesApiController extends Controller
         $emergency->road = $user->road;
         $emergency->latitude = $user->latitude;
         $emergency->longitude = $user->longitude;
+        $emergency->mssg_count = count($user->contacts);
         $emergency->save();
 
         $nearst_users = User::where('id','!=',$user->id)->where('road', $user->road)->get();

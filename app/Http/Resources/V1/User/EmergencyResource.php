@@ -32,7 +32,7 @@ class EmergencyResource extends JsonResource
             'city' => $this->city,
             'road' => $this->road,
             'notification_count' => count($this->notification),
-            'massage_count' => 1,
+            'massage_count' => $this->mssg_count,
         ];
     }
 }
