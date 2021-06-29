@@ -83,7 +83,7 @@ class EmergenciesApiController extends Controller
             ]);
         }
 
-        return $this->returnData(['emergency_id' => $emergency->id]);
+        return $this->returnData($emergency->id);
         
 }
 }
