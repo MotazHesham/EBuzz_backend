@@ -25,14 +25,21 @@ class EmergenciesApiController extends Controller
     }
     
     public function activity(Request $request){
-        $emergencies = Emergency::where('user_id','!=',Auth::id())->orderBy('created_at','desc')->paginate(10); 
+        $emergencies = Emergency::where('user_id','!=',Auth::id())->where('status',1)->orderBy('created_at','desc')->paginate(10); 
         $new = EmergencyResource::collection($emergencies);
         return $this->returnPaginationData($new,$emergencies,"success"); 
+    }
+
+    public function stop($id){
+        $emergency = Emergency::find($id);
+        $emergency->status = 0;
+        $emergency->save();
+        return $this->returnSuccessMessage('Success Closed Live');
     }
     
     public function start()
     {
-        
+
         $user = Auth::user();
         $emergency = new Emergency;
         $emergency->user_id = $user->id;
@@ -76,9 +83,7 @@ class EmergenciesApiController extends Controller
             ]);
         }
 
-        return $this->returnSuccessMessage(__('Notification Sent Successfully'));
+        return $this->returnData(['emergency_id' => $emergency->id]);
         
-
-    
 }
 }
