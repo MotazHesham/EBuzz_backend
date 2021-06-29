@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api\V1\User;
 
 use App\Http\Controllers\Controller;
 use App\Models\Report;
+use App\Models\Emergency;
 use App\Models\User;
 use App\Traits\api_return;
 use Illuminate\Http\Request;
@@ -26,8 +27,7 @@ class ReportsApiController extends Controller
     { 
 
         $rules = [
-            'report_id' => 'required',
-            'user_reported_id' => 'required', 
+            'emergency_id' => 'required',
             'reason' => 'nullable|max:255'
         ];
 
@@ -35,14 +35,15 @@ class ReportsApiController extends Controller
 
         if ($validator->fails()) {
             return $this->returnError('401', $validator->errors());
-        }
+        } 
 
-        $user = User::find($request->user_reported_id); 
-        $user->reports()->attach(
-            $request->user_reported_id, 
+        $user_reported_id = Emergency::find($request->emergency_id)->user_id; 
+
+        $reported_user = User::find($user_reported_id);
+
+        $reported_user->users()->attach(
+          Auth::id(), 
           [
-            'user_reporter_id' => auth()->user()->id,
-            'user_reported_id' => $request->user_reported_id,
             'reason' => $request->reason,
           ]
         );
