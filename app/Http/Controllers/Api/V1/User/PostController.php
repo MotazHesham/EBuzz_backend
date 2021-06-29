@@ -65,8 +65,7 @@ class PostController extends Controller
 
         $rules = [
             'description' => 'required',
-            'city_id' => 'required',
-
+            'city_id' => 'required|integer',
         ];
 
     $validator = Validator::make($request->all(), $rules);

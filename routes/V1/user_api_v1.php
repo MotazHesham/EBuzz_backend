@@ -56,7 +56,6 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
         //cities
         Route::group(['prefix' =>'cities'],function(){
             Route::get('view','CityApiController@index');
-
         });
         
         //users
