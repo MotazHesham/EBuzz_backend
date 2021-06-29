@@ -28,7 +28,10 @@ class PostsController extends Controller
             }); 
             $table->editColumn('phone',function($row){
                 return $row->user->phone;
-            }); 
+            });  
+            $table->editColumn('photo',function($row){
+                return '<img src="'.asset("storage/".$row->photo).'" width="75" height="75">';
+            });  
             $table->editColumn('status',function($row){
                 if($row->status == 0){
                     return 'pending';
@@ -38,6 +41,8 @@ class PostsController extends Controller
                     return 'refused';
                 }
             }); 
+            
+            $table->rawColumns(['action', 'photo']);
             
             return $table->make(true);
 

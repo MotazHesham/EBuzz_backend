@@ -28,6 +28,8 @@ Route::group(['middleware' => 'admin'],function() {
     Route::get('admin', 'HomeController@dashboard')->name('admin');
     Route::get('/showEmergency','Admin\EmergenciesController@getEmergency')->name('showEmergency');
 
+    Route::get('/cities','HomeController@cities')->name('cities');
+
     Route::get('/showuser', 'Admin\UserController@user')->name('showuser');
     Route::get('/showrole', 'Admin\RoleController@role')->name('showrole');
     Route::get('/ShowReports','Admin\ReportsController@getReports')->name('get.reports'); 

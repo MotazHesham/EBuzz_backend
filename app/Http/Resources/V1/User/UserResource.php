@@ -27,6 +27,7 @@ class UserResource extends JsonResource
             'photo' => $this->photo ? asset('storage/'.$this->photo) : asset('user.png'),
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
+            'block' => $this->block,
         ];
 
 

@@ -83,12 +83,16 @@ class UserAuthApiController extends Controller
 
         if (Auth::attempt(['phone' => $request->phone, 'password' => $request->password])) {
             $token = Auth::user()->createToken('user_token')->plainTextToken;
-            return $this->returnData(
-                [
-                    'user_token' => $token,
-                    'user_id '=> Auth::id()
-                ]
-            );
+            if(Auth::user()->block){ 
+                return $this->returnError('500',__('You Get Blocked From Using this App')); 
+            }else{
+                return $this->returnData(
+                    [
+                        'user_token' => $token,
+                        'user_id '=> Auth::id()
+                    ]
+                );
+            }
         } else {
             return $this->returnError('500',__('invalid username or password'));
         }

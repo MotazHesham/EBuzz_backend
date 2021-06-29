@@ -44,6 +44,14 @@
                 Posts
             </a>
         </li>   
+        <li class="c-sidebar-nav-item">
+            <a href="{{route('cities')}}" class="c-sidebar-nav-link">
+                <i class="c-sidebar-nav-icon fas fa-fw fa-globe-africa">
+
+                </i>
+                Cities
+            </a>
+        </li>   
 
         <li class="c-sidebar-nav-item">
             <a href="{{route('logout')}}" class="c-sidebar-nav-link">

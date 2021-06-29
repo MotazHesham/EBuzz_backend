@@ -20,7 +20,7 @@ class EmergenciesController extends Controller
 
 
             $table->editColumn('action',function($row){
-                return '<button type="button" class="btn btn-primary"  onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
+                return '<button type="button" class="btn btn-outline-info btn-pill" style="box-shadow: 0px 0px 7px #2980B9;"  onclick="initMap('.$row->latitude .','.$row->longitude.')">Show Location</button>';
             });
             $table->editColumn('User_firstName',function($row){
                 return $row->user->first_name ?? '';
