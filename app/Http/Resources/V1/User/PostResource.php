@@ -26,6 +26,7 @@ class PostResource extends JsonResource
             'description' => $this->description,
             'photo' => asset('storage/'.$this->photo),
             'city' => $this->city->name,
+            'city_id' => $this->city_id,
             'status' => $this->status,
         ];
     }
