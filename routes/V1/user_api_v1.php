@@ -9,6 +9,7 @@ Route::group(['prefix' => 'v1/user', 'as' => 'api.', 'namespace' => 'Api\V1\User
 
     Route::post('register','UserAuthApiController@register');
     Route::post('login','UserAuthApiController@login');
+    Route::post('forgetpassword','UserAuthApiController@forgetpassword');
     Route::post('check-phone-exist','UserAuthApiController@check_phone_exist');
 
     Route::group(['middleware' => ['auth:sanctum']],function () {

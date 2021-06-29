@@ -34,6 +34,25 @@ class UserAuthApiController extends Controller
         }
     }
 
+    public function forgetpassword(Request $request){
+        $rules = [
+            'phone' => 'required|regex:/^[0-9]*$/|min:11|max:20',
+            'password' => 'required|min:6|max:20|confirmed'
+        ];
+
+        $validator = Validator::make($request->all(), $rules);
+
+        if ($validator->fails()) {
+            return $this->returnError('401', $validator->errors());
+        }
+
+        $user = User::where('phone',$request->phone)->first();
+        $user->password = bcrypt($request->password); 
+        $user->save();
+        
+        return $this->returnSuccessMessage('success change phone');
+    }
+
     public function register(Request $request){
 
         $rules = [
