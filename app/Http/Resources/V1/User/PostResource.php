@@ -27,10 +27,15 @@ class PostResource extends JsonResource
         }elseif($this->status == 2){
             $status = 'Refused';
         }
+        $first = $this->user->first_name ?? '';
+        $last = $this->user->last_name ?? '';
+        if($this->user){
+            $image = $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png');
+        }
         return [
             'id'=>$this->id,
-            'user_name' => $this->user->first_name ?? '' . ' ' . $this->user->last_name ?? '',
-            'user_photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
+            'user_name' => $first . ' ' . $last ,
+            'user_photo' => $image ,
             'date' => $this->created_at ? $this->calculate_diff_date($this->created_at) : '',
             'description' => $this->description,
             'photo' => asset('storage/'.$this->photo),
