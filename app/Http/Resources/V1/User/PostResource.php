@@ -31,6 +31,8 @@ class PostResource extends JsonResource
         $last = $this->user->last_name ?? '';
         if($this->user){
             $image = $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png');
+        }else{
+            $image = asset('user.png');
         }
         return [
             'id'=>$this->id,
