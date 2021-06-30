@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\User;
 use App\Http\Controllers\Controller;
 use App\Models\Emergency;
 use App\Models\User;
+use App\Models\City;
 use Illuminate\Http\Request;
 use Auth;
 use App\Http\Resources\V1\User\UserResource;
@@ -62,6 +63,13 @@ class UsersApiController extends Controller
         $user->city = $request->city;
         $user->road = $request->road;
         $user->save();
+
+        $city = City::where('name',$request->city)->first();
+        if(!$city){
+            $city = new City;
+            $city->name = $request->city;
+            $city->save();
+        }
 
         return $this->returnSuccessMessage('Location Updated');
     }
