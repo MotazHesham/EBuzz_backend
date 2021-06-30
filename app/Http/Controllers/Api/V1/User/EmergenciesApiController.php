@@ -25,7 +25,7 @@ class EmergenciesApiController extends Controller
     }
     
     public function activity(Request $request){
-        $emergencies = Emergency::where('user_id','!=',Auth::id())->where('status',1)->orderBy('created_at','desc')->paginate(10); 
+        $emergencies = Emergency::where('user_id','!=',Auth::id())->orderBy('status','desc')->orderBy('created_at','desc')->paginate(10); 
         $new = EmergencyResource::collection($emergencies);
         return $this->returnPaginationData($new,$emergencies,"success"); 
     }

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api\V1\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Post;
+use App\Models\City;
 use App\Traits\api_return;
 use Validator;
 use Auth;
@@ -18,7 +19,8 @@ class PostController extends Controller
 
     //----------------------------------------view posts
     public function posts(Request $request){
-        $posts = Post::where('user_id','!=',Auth::id())->where('status',1)->orderBy('created_at','desc')->paginate(10); 
+        $city = City::where('name',Auth::user()->city)->first();
+        $posts = Post::where('user_id','!=',Auth::id())->where('status',1)->orderByRaw("FIELD(city_id , ".$city->id.") Desc")->orderBy('created_at','DESC')->paginate(10); 
         $new = PostResource::collection($posts);
         return $this->returnPaginationData($new,$posts,"success"); 
     }

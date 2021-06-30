@@ -18,11 +18,18 @@ class EmergencyResource extends JsonResource
     
     public function toArray($request)
     { 
+        $first = $this->user->first_name ?? '';
+        $last = $this->user->last_name ?? '';
+        if($this->user){
+            $image = $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png');
+        }else{
+            $image = asset('user.png');
+        }
         return [
             'id'=>$this->id,
-            'user_name' => $this->user->first_name . ' ' . $this->user->last_name,
-            'phone' => $this->user->phone,
-            'photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
+            'user_name' => $first . ' ' . $last,
+            'phone' => $this->user->phone ?? '',
+            'photo' => $image,
             'date' => $this->created_at ? $this->calculate_diff_date($this->created_at) : '',
             'latitude' => $this->latitude,
             'longitude' => $this->longitude,
@@ -31,6 +38,7 @@ class EmergencyResource extends JsonResource
             'state' => $this->state,
             'city' => $this->city,
             'road' => $this->road,
+            'status' => intval($this->status),
             'notification_count' => count($this->notification),
             'massage_count' => $this->mssg_count,
         ];
