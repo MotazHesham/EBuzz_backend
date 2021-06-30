@@ -42,7 +42,7 @@ class PostResource extends JsonResource
             'description' => $this->description,
             'photo' => asset('storage/'.$this->photo),
             'city' => $this->city->name ?? City::first()->name,
-            'city_id' => intval($this->city->name ? $this->city_id : City::first()->id),
+            'city_id' => intval($this->city ? $this->city_id : City::first()->id),
             'status' => $status,
         ];
     }
