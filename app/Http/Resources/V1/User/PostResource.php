@@ -4,6 +4,7 @@ namespace App\Http\Resources\V1\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Traits\date_trait;
+use App\Models\City;
 
 class PostResource extends JsonResource
 {
@@ -28,13 +29,13 @@ class PostResource extends JsonResource
         }
         return [
             'id'=>$this->id,
-            'user_name' => $this->user->first_name . ' ' . $this->user->last_name,
+            'user_name' => $this->user->first_name ?? '' . ' ' . $this->user->last_name ?? '',
             'user_photo' => $this->user->photo ? asset('storage/'.$this->user->photo) : asset('user.png'),
             'date' => $this->created_at ? $this->calculate_diff_date($this->created_at) : '',
             'description' => $this->description,
             'photo' => asset('storage/'.$this->photo),
-            'city' => $this->city->name,
-            'city_id' => intval($this->city_id),
+            'city' => $this->city->name ?? City::first()->name,
+            'city_id' => intval($this->city->name ? $this->city_id : City::first()->id),
             'status' => $status,
         ];
     }

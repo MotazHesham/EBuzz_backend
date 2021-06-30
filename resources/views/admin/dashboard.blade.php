@@ -154,7 +154,7 @@
                                 {{$post->id}}
                             </td>
                             <td>
-                                {{$post->user->first_name . ' ' . $post->user->name}}
+                                {{$post->user->first_name ?? '' . ' ' . $post->user->name ?? ''}}
                             </td> 
                             <td>
                                 {{$post->description}}
