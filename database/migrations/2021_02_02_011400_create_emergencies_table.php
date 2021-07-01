@@ -14,11 +14,18 @@ class CreateEmergenciesTable extends Migration
     public function up()
     {
         Schema::create('emergencies', function (Blueprint $table) {
-            $table->id(); 
-            $table->datetime('date');
+            $table->id();
+            $table->string('country')->nullable();
+            $table->string('country_code')->nullable();
+            $table->string('state')->nullable();
+            $table->string('city')->nullable();
+            $table->string('road')->nullable();
             $table->double('latitude');
             $table->double('longitude');
             $table->unsignedBigInteger('user_id');
+            $table->tinyInteger('status')->default(1);
+            $table->string('feedback')->nullable();
+            $table->integer('mssg_count');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });

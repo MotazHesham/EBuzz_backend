@@ -14,6 +14,7 @@ class NotificationSeeder extends Seeder
     {
         for ($i = 1 ; $i <= 20 ; $i++) {
             $notification = new Notification();
+            $notification->user_id = rand(1,20);
             $notification->emergency_id = rand(1,20);
             $notification->save();
         }
