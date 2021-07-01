@@ -29,6 +29,9 @@ class PostsController extends Controller
             $table->editColumn('phone',function($row){
                 return $row->user->phone;
             });  
+            $table->editColumn('city',function($row){
+                return $row->city ? $row->city->name : '';
+            });  
             $table->editColumn('photo',function($row){
                 return '<img src="'.asset("storage/".$row->photo).'" width="75" height="75">';
             });  
