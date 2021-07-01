@@ -20,6 +20,9 @@ class PostController extends Controller
     //----------------------------------------view posts
     public function posts(Request $request){
         $city = City::where('name',Auth::user()->city)->first();
+        if(!$city){
+            $city = City::first();
+        }
         $posts = Post::where('user_id','!=',Auth::id())->where('status',1)->orderByRaw("FIELD(city_id , ".$city->id.") Desc")->orderBy('created_at','DESC')->paginate(10); 
         $new = PostResource::collection($posts);
         return $this->returnPaginationData($new,$posts,"success"); 

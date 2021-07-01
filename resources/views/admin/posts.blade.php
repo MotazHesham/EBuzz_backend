@@ -16,6 +16,7 @@
                         <th> Phone </th>
                         <th> Name</th>
                         <th> Description </th>
+                        <th> city </th>
                         <th> Photo </th>
                         <th> Status </th>
                         <th></th>
@@ -49,6 +50,7 @@
                         { data: 'phone', name: 'phone' },
                         { data: 'first_name', name: 'first_name' },
                         { data: 'description', name: 'description' },  
+                        { data: 'city', name: 'city.name' },  
                         { data: 'photo', name: 'photo' },  
                         { data: 'status', name: 'status' },  
                         { data: 'action', name: 'action'},
