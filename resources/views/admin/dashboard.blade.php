@@ -11,7 +11,7 @@
                 Latest Emergencies
             </h3>
             <hr width="350">
-            <div class="mt-4" id="map" style="width: 750px;height:500px"></div>
+            <div class="mt-4" id="map" style="width: 100%;height:100%"></div>
         </div>
 
         <div class="col-md-4"> 
@@ -149,12 +149,16 @@
                 </thead>
                 <tbody>
                     @foreach(\App\Models\Post::orderBy('created_at','desc')->get()->take(5) as $post)
+                    @php 
+                        $first = $post->user->first_name ?? "";
+                        $last = $post->user->name ?? "";
+                    @endphp
                         <tr>
                             <td>
                                 {{$post->id}}
                             </td>
                             <td>
-                                {{$post->user->first_name ?? '' . ' ' . $post->user->name ?? ''}}
+                                {{$first . ' ' . $last }}
                             </td> 
                             <td>
                                 {{$post->description}}
@@ -181,7 +185,9 @@
 <script type="text/javascript">
     var locations = [
         @foreach($emergencies as $emergency)
-            ['{{$emergency->user->first_name}}', '{{$emergency->latitude}}', '{{$emergency->longitude}}', '{{$emergency->id}}'],
+            @if($emergency->user)
+                ['{{$emergency->user->first_name}}', '{{$emergency->latitude}}', '{{$emergency->longitude}}', '{{$emergency->id}}'],
+            @endif
         @endforeach
     ];
 

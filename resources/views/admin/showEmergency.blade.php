@@ -16,6 +16,7 @@
                             <th> First Name </th>
                             <th> Last Name </th>
                             <th> Phone </th>
+                            <th> Get Help? </th>
                             <th> Date </th>
                             <th> location </th> 
                         </tr>
@@ -71,6 +72,7 @@
                     { data: 'User_firstName', name: 'User.firstname'},
                     { data: 'User_Last_Name', name: 'User.last_name'},
                     { data: 'User_Phone', name: 'User.phone' },
+                    { data: 'feedback', name: 'feedback' },
                     { data: 'date', name: 'date'},
                     { data: 'action', name: 'action'},
                 ],
