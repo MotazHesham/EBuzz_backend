@@ -63,6 +63,9 @@ class EmergenciesApiController extends Controller
                 $nearst_users = User::where('id','!=',$user->id)->where('state', $user->state)->get(); 
                 if($nearst_users->count() < 50){
                     $nearst_users = User::where('id','!=',$user->id)->where('country', $user->country)->get(); 
+                    if($nearst_users->count() < 50){
+                        $nearst_users = User::where('id','!=',$user->id)->get(); 
+                    }
                 }
             } 
         }
