@@ -4,6 +4,7 @@ namespace App\Http\Resources\V1\User;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Traits\date_trait;
+use App\Models\Notification;
 
 class EmergencyResource extends JsonResource
 {

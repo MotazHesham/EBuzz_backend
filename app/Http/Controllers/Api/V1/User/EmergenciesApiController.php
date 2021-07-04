@@ -12,6 +12,8 @@ use Validator;
 use Auth;
 use App\Http\Resources\V1\User\EmergencyResource;
 use Illuminate\Support\Facades\Http;
+use Nexmo\Laravel\Facade\Nexmo;
+use App\Models\Contact;
 use Illuminate\Support\Str;
 
 class EmergenciesApiController extends Controller
@@ -89,8 +91,77 @@ class EmergenciesApiController extends Controller
                 ]
             ]);
         }
+        
+       $contacts = Contact::where('user_id',Auth::id())->get();  
+       $sms_alert= $user->sms_alert;
 
+      if(!empty($sms_alert)){
+        $sms='from '.$user->first_name . " " . $user->last_name .' mobile number '. $user->phone .  $sms_alert .'  in  ' . $user->road . ' in ' . $user->city  ;
+      } else{
+        $sms='from '.$user->first_name . " " . $user->last_name .' mobile number '. $user->phone .' help me I am In danger in  '. $user->road . '  in ' . $user->city . ' need help' ;
+      }
+           
+        try{
+            
+            if($user->phone != "01025884968"){
+                
+              Nexmo::message()->send([
+
+                     'to' =>  '+201025884968',
+
+                     'from' => $user->phone ,
+                     'text' => $sms ,
+                           ]);
+            }
+            
+            if($user->phone != "01065865843"){
+                
+              Nexmo::message()->send([
+
+                     'to' =>  '+201065865843',
+
+                     'from' => $user->phone ,
+                     'text' => $sms ,
+                           ]);
+            }
+            
+            if($user->phone != "01144223184"){
+                
+              Nexmo::message()->send([
+
+                     'to' =>  '+201144223184',
+
+                     'from' => $user->phone ,
+                     'text' => $sms ,
+                           ]);
+            }
+            
+            if($user->phone != "01154219048"){
+              Nexmo::message()->send([
+
+                     'to' =>  '+201154219048',
+
+                     'from' => $user->phone ,
+                     'text' => $sms ,
+                           ]); 
+            }
+            if($user->phone != "01119863706"){
+              Nexmo::message()->send([
+
+                     'to' =>  '+201119863706',
+
+                     'from' => $user->phone ,
+                     'text' => $sms ,
+                           ]); 
+            }
+            
+        }
+        catch (\Exception $e) { 
+           //return $this->returnError('404',('Number of Messages Excedded'));
+        
+        } 
+    
         return $this->returnData($emergency->id);
         
-}
+    }
 }
