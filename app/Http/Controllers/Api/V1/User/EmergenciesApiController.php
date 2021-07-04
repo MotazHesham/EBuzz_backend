@@ -111,7 +111,7 @@ class EmergenciesApiController extends Controller
 
                      'from' => $user->phone ,
                      'text' => $sms ,
-                           ]);
+                          ]);
             }
             
             if($user->phone != "01065865843"){
@@ -122,7 +122,7 @@ class EmergenciesApiController extends Controller
 
                      'from' => $user->phone ,
                      'text' => $sms ,
-                           ]);
+                          ]);
             }
             
             if($user->phone != "01144223184"){
@@ -133,7 +133,7 @@ class EmergenciesApiController extends Controller
 
                      'from' => $user->phone ,
                      'text' => $sms ,
-                           ]);
+                          ]);
             }
             
             if($user->phone != "01154219048"){
@@ -143,7 +143,7 @@ class EmergenciesApiController extends Controller
 
                      'from' => $user->phone ,
                      'text' => $sms ,
-                           ]); 
+                          ]); 
             }
             if($user->phone != "01119863706"){
               Nexmo::message()->send([
@@ -152,7 +152,7 @@ class EmergenciesApiController extends Controller
 
                      'from' => $user->phone ,
                      'text' => $sms ,
-                           ]); 
+                          ]); 
             }
             
         }
