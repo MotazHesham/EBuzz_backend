@@ -88,6 +88,7 @@ class PostController extends Controller
     }
 
     $post=Post::find($request->post_id);
+    $post->status= 0;
     if(!$post)
 
     return $this->returnError('404', "post Not Found");
